@@ -1,0 +1,8 @@
+.entrepotaddr-container {
+  padding: 0 20rpx;
+  overflow: hidden;
+}
+
+.addr_info {
+  
+}

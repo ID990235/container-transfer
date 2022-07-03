@@ -1,14 +1,32 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/coupons/coupons",
+    "pages/area/area",
+    "pages/entrepotaddr/entrepotaddr"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#73c97c",
+    "navigationBarTitleText": "集装箱转运",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/images/index.png",
+        "selectedIconPath": "/assets/images/indexSelect.png"
+      },
+      {
+        "pagePath": "pages/coupons/coupons",
+        "text": "优惠券",
+        "iconPath": "/assets/images/coupons.png",
+        "selectedIconPath": "/assets/images/couponsSelect.png"
+      }
+    ]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

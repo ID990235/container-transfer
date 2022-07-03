@@ -1,0 +1,7 @@
+<view class="entrepotaddr-container">
+  <!-- 复制仓库地址信息 -->
+  <view class="addr_info">
+    <view class=""></view>
+  </view>
+  <button></button>
+</view>
