@@ -79,9 +79,10 @@ Page({
     })
   },
   clickCountries(e: any) {
-    const countries = e.target.dataset.item
-    wx.redirectTo({
-      url: `/pages/index/index?countries=${countries}`
+    const countries: any = e.target.dataset.item
+    wx.setStorageSync("countries", JSON.stringify(countries))
+    wx.switchTab({
+      url: `/pages/index/index`
     })
   }
 })

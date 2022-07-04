@@ -6,6 +6,14 @@
   </view>
   <view class="receipt-box">
     <view class="receipt-info">
+      <van-cell-group>
+        <view>
+          <text>Name：</text>
+          <van-field value="{{Name}}" clearable placeholder="Please fill in the recipient‘s name" />
+        </view>
+
+        <van-field value="{{Phone}}" placeholder="Please fill in the recipient‘s phone" clearable />
+      </van-cell-group>
     </view>
   </view>
   <view class="bt-box">

@@ -17,11 +17,16 @@ Page({
         img: "../../assets/images/calculator.png"
       }],
     show: false,
-    countries: ""
+    countries: ''
   },
   onLoad(options: any) {
+
+  },
+  onShow() {
+    const countries = JSON.parse(wx.getStorageSync('countries'))
+    if (!countries) return
     this.setData({
-      countries: options.countries
+      countries: countries
     })
   },
   selectCountries() {

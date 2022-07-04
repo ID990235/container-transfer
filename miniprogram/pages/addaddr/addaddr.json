@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "addrbox": "../../Components/addrbox/addrbox"
+    "addrbox": "../../Components/addrbox/addrbox",
+    "van-field": "@vant/weapp/field/index"
   }
 }
