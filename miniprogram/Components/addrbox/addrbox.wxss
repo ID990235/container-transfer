@@ -1,0 +1,63 @@
+.addr_info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500rpx;
+  overflow: hidden;
+}
+
+.addr-box {
+  position: relative;
+  width: 694rpx;
+  height: 400rpx;
+  opacity: 0.85;
+  border-radius: 6rpx;
+  background-color: rgba(255, 255, 255, 79);
+  color: rgba(16, 16, 16, 100);
+  font-size: 32rpx;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 100);
+}
+
+.entrepot-addr {
+  position: relative;
+  width: 400rpx;
+  margin: 30rpx 0 30rpx 60rpx;
+}
+
+.addr-box .dot {
+  display: inline-block;
+  width: 52rpx;
+  height: 52rpx;
+  background-color: #73c97c;
+  color: rgba(255, 255, 255, 100);
+  border: 2rpx solid #73c97c;
+  border-radius: 30rpx;
+}
+
+.addr-box .dot image {
+  width: 100%;
+  height: 100%;
+}
+
+.addr-box .title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.addr-content {
+  margin-left: 60rpx;
+}
+
+.addr-content view {
+  color: rgba(0, 0, 0, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 14rpx;
+}

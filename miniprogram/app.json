@@ -2,8 +2,18 @@
   "pages": [
     "pages/index/index",
     "pages/coupons/coupons",
-    "pages/area/area",
-    "pages/entrepotaddr/entrepotaddr"
+    "pages/countries/countries",
+    "pages/entrepotaddr/entrepotaddr",
+    "pages/user/user",
+    "pages/order/order",
+    "pages/reckon/reckon",
+    "pages/notice/notice",
+    "pages/addaddr/addaddr",
+    "pages/activity/activity",
+    "pages/transferflow/transferflow",
+    "pages/contactservice/contactservice",
+    "pages/aboutus/aboutus",
+    "pages/myaddr/myaddr"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,10 +33,21 @@
         "text": "优惠券",
         "iconPath": "/assets/images/coupons.png",
         "selectedIconPath": "/assets/images/couponsSelect.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单信息",
+        "iconPath": "/assets/images/order.png",
+        "selectedIconPath": "/assets/images/orderSelect.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "集装箱转运",
+        "iconPath": "/assets/images/user.png",
+        "selectedIconPath": "/assets/images/userSelect.png"
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }

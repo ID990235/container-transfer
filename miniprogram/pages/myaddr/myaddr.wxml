@@ -1,0 +1,6 @@
+<!-- 我的地址页面 -->
+<view class="myaddr-container">
+  <van-empty wx:if="{{empty}}" description="亲，你还没有添加地址信息喔~">
+    <button class="bt" bindtap="addaddr">添加地址</button>
+  </van-empty>
+</view>

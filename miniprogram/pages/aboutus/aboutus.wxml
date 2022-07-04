@@ -1,0 +1,4 @@
+<!-- 关于我们页面 -->
+<view class="aboutus-container">
+  <van-empty description="关于我们集装箱转运" />
+</view>

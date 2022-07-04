@@ -1,7 +1,12 @@
 <view class="entrepotaddr-container">
   <!-- 复制仓库地址信息 -->
-  <view class="addr_info">
-    <view class=""></view>
+  <addrbox></addrbox>
+  <button class="cpoy-addr-bt" bindtap="copyText">一键复制仓库地址信息</button>
+  <!-- 转运流程 -->
+  <view class="process-box">
+    <view class="processinfo" wx:for="{{processinfo}}" wx:key="title">
+      <view class="title">{{item.title}}</view>
+      <text class="content" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.content}}</text>
+    </view>
   </view>
-  <button></button>
 </view>

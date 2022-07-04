@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "navigationBarTitleText": "集装箱转运",
+  "navigationBarBackgroundColor": "#4c168e"
+}

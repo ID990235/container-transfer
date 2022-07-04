@@ -1,0 +1,37 @@
+.addaddr-container {
+  padding: 0 20rpx 80rpx;
+  overflow: hidden;
+}
+
+.copy {
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  color: #73c97c;
+  font-weight: 600;
+}
+
+.receipt-box {
+  margin-top: 46rpx;
+}
+
+.receipt-info {
+  width: 694rpx;
+  height: 740rpx;
+  margin: 0 auto;
+  opacity: 0.85;
+  border-radius: 6rpx;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 100);
+}
+
+.bt-box {
+  margin: 100rpx 0;
+}
+
+.bt-item {
+  width: 50vw;
+  background-color: #73c97c;
+  border-radius: 50rpx;
+  color: white;
+}

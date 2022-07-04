@@ -1,0 +1,17 @@
+<view class="addr_info">
+  <view class="addr-box">
+    <slot name="copy"></slot>
+    <view class="entrepot-addr">
+      <view class="dot">
+        <image src="../../assets/images/location.png"></image>
+      </view>
+      <view class="title">仓库地址</view>
+    </view>
+    <view class="addr-content">
+      <view>收件人：集装箱仓库</view>
+      <view>收货地址：深圳市龙华区龙华街道工业路壹城环智中心C座2607</view>
+      <view>联系电话：13388888888</view>
+      <view>邮政编码：518000</view>
+    </view>
+  </view>
+</view>

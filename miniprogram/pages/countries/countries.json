@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-index-bar": "@vant/weapp/index-bar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "navigationBarTitleText": "选择国家或地区"
+}

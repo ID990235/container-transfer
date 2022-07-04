@@ -1,0 +1,15 @@
+<view class="addaddr-container">
+  <view wx:if="{{type != ''}}" class="addr_info">
+    <addrbox>
+      <view slot="copy" class="copy" bindtap="copyText">复制</view>
+    </addrbox>
+  </view>
+  <view class="receipt-box">
+    <view class="receipt-info">
+    </view>
+  </view>
+  <view class="bt-box">
+    <button wx:if="{{type != ''}}" class="bt-item">立即转运</button>
+    <button wx:else class="bt-item">添加地址</button>
+  </view>
+</view>

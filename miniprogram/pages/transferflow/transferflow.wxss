@@ -1,0 +1,30 @@
+.transferflow-container {
+  padding: 28rpx 20rpx 60rpx;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.content {
+  font-size: 34rpx;
+  padding: 20rpx 0;
+}
+
+.time {
+  color: #686868;
+  text-align: right;
+}
+
+.bt-box {
+  padding: 80rpx 0;
+  margin-bottom: 80rpx;
+}
+
+.bt-box button {
+  color: white;
+  background-color: #73c97c;
+  border-radius: 50rpx;
+}

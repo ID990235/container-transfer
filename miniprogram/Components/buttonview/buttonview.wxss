@@ -1,0 +1,86 @@
+.transfer-freight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+  height: 365rpx;
+}
+
+.transfer-box {
+  position: relative;
+  width: 324rpx;
+  height: 324rpx;
+  border-radius: 28rpx;
+  background-color: #a4caa8;
+  box-shadow: 0px 6rpx 14rpx 4rpx rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(187, 187, 187, 100);
+}
+
+.freight-box {
+  position: relative;
+  width: 324rpx;
+  height: 324rpx;
+  border-radius: 28rpx;
+  background-color: #fc9d62;
+  text-align: center;
+  box-shadow: 0px 6rpx 14rpx 4rpx rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(187, 187, 187, 100);
+}
+
+.text {
+  text-align: left;
+  margin-top: 34rpx;
+  margin-left: 30rpx;
+}
+
+.text .text1 {
+  color: rgba(247, 246, 246, 100);
+  font-size: 56rpx;
+  font-weight: 600;
+}
+
+.text .text2 {
+  margin-top: 14rpx;
+  color: rgba(247, 246, 246, 100);
+}
+
+.dot {
+  position: absolute;
+  top: 222rpx;
+  left: 50rpx;
+  width: 58rpx;
+  height: 54rpx;
+  border-radius: 58rpx;
+  background-color: #87be8d;
+  text-align: center;
+  box-shadow: 2rpx 6rpx 20rpx 2rpx rgba(0, 0, 0, 0.4);
+}
+
+.freight-box .dot {
+  background-color: #ff6200;
+}
+
+.dot image {
+  width: 100%;
+  height: 100%;
+}
+
+.tf-img1 {
+  position: absolute;
+  right: 0;
+  width: 178rpx;
+  height: 178rpx;
+}
+
+.tf-img2 {
+  position: absolute;
+  right: 0;
+  bottom: 16rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}

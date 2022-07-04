@@ -1,0 +1,36 @@
+<view class="countries-container">
+  <!-- 搜索 -->
+  <view>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:search="toSearch" bind:clear="clearSearch" />
+  </view>
+  <!-- 索引兰 -->
+  <view>
+    <van-index-bar wx:if="{{searchResult !== '' && !empty}}" index-list="{{ indexList}}">
+      <view wx:for="{{searchResult}}" wx:for-item="key" wx:key="index">
+        <van-index-anchor index="{{index}}" />
+        <van-cell wx:for="{{key}}" wx:key="index" data-item="{{item.cnName}}" bind:click="clickCountries" title="{{item.cnName}}" value="{{item.enName}}" />
+      </view>
+    </van-index-bar>
+
+    <van-empty wx:if="{{empty}}" image="error" description="没有该国家噢，等待你创建一个国家呢" />
+
+    <van-index-bar wx:elif="{{!empty && searchResult == ''}}" index-list="{{ indexList}}">
+      <view>
+        <van-index-anchor index="A" />
+        <van-cell data-item="{{item.cnName}}" bind:click="clickCountries" wx:for="{{countriesList.A}}" title="{{item.cnName}}" value="{{item.enName}}" wx:key="cnName" />
+      </view>
+      <view>
+        <van-index-anchor index="C" />
+        <van-cell data-item="{{item.cnName}}" bind:click="clickCountries" wx:for="{{countriesList.C}}" title="{{item.cnName}}" value="{{item.enName}}" wx:key="cnName" />
+      </view>
+      <view>
+        <van-index-anchor index="P" />
+        <van-cell data-item="{{item.cnName}}" bind:click="clickCountries" wx:for="{{countriesList.P}}" title="{{item.cnName}}" value="{{item.enName}}" wx:key="cnName" />
+      </view>
+      <view>
+        <van-index-anchor index="U" />
+        <van-cell data-item="{{item.cnName}}" bind:click="clickCountries" wx:for="{{countriesList.U}}" title="{{item.cnName}}" value="{{item.enName}}" wx:key="cnName" />
+      </view>
+    </van-index-bar>
+  </view>
+</view>

@@ -15,12 +15,12 @@
   <!-- 国家和地区 -->
   <view class="countries-box">
     <view class="countries">
-      <view class="cn-text">中国</view>
+      <view class="cn-text"><text>中国</text></view>
       <view class="feiji">
         <image src="../../assets/images/feiji.png"></image>
       </view>
-      <view class="to-countries" bindtap="selectCountries">美国</view>
-      <button class="bt">立即转运</button>
+      <view class="to-countries" bindtap="selectCountries"><text>{{countries ? countries : '大嘤弟国'}}</text></view>
+      <button class="bt" bindtap="nowTransfer">选择渠道后转运</button>
     </view>
   </view>
   <!-- 联系客服 -->
@@ -37,32 +37,7 @@
     </view>
   </view>
   <!-- 转运和运费 -->
-  <view class="transfer-freight">
-    <view class="transfer-box">
-      <view class="text">
-        <view class="text1">转运须知</view>
-        <view class="text2">流程和注意事项</view>
-      </view>
-      <view class="dot">
-        <image src="../../assets/images/arrowright.png"></image>
-      </view>
-      <view class="tf-img1">
-        <image src="../../assets/images/car.png"></image>
-      </view>
-    </view>
-    <view class="freight-box">
-      <view class="text">
-        <view class="text1">运费估算</view>
-        <view class="text2">费用心中有数</view>
-      </view>
-      <view class="dot">
-        <image src="../../assets/images/arrowright.png"></image>
-      </view>
-      <view class="tf-img2">
-        <image src="../../assets/images/calculator.png"></image>
-      </view>
-    </view>
-  </view>
+  <buttonview liseview="{{liseview}}"></buttonview>
   <!-- 轻松转运 -->
   <view class="easily-box">
     <text class="easily_title">轻松转运</text>

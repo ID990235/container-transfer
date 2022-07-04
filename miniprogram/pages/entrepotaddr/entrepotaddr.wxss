@@ -3,6 +3,28 @@
   overflow: hidden;
 }
 
-.addr_info {
-  
+.cpoy-addr-bt {
+  width: 660rpx !important;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background-color: rgba(54, 136, 240, 100);
+  color: rgba(255, 255, 255, 100);
+  font-size: 32rpx;
+}
+
+.process-box {
+  margin-top: 40rpx;
+}
+
+.process-box .title {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.processinfo {
+  margin-bottom: 60rpx;
+}
+
+.content {
+  font-size: 26rpx;
 }

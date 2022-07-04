@@ -1,0 +1,4 @@
+<!-- 联系客服页 -->
+<view>
+  <van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="客服模式暂未上线" />
+</view>
