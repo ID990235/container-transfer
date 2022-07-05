@@ -1,4 +1,6 @@
 <!-- 联系客服页 -->
 <view>
-  <van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="客服模式暂未上线" />
+  <van-empty description="点击下面按钮联系小程序客服">
+    <button class="bt" open-type="contact">联系客服</button>
+  </van-empty>
 </view>

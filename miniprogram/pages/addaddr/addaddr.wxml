@@ -1,23 +1,66 @@
 <view class="addaddr-container">
-  <view wx:if="{{type != ''}}" class="addr_info">
+  <!-- 仓库地址 -->
+  <view wx:if="{{typestr != ''}}" class="addr_info">
     <addrbox>
       <view slot="copy" class="copy" bindtap="copyText">复制</view>
     </addrbox>
   </view>
+  <!-- 目的地 -->
   <view class="receipt-box">
     <view class="receipt-info">
+      <!-- 标题and选择地址 -->
+      <view wx:if="{{typestr != ''}}" class="top-box">
+        <view class="left">
+          <view class="title">目标国收件信息</view>
+          <view class="tip">
+            <van-icon color="red" name="warning-o" /><text>请用英文填写</text>
+          </view>
+        </view>
+        <view class="right">
+          <button class="right-bt" bindtap="selectAddr">选择地址</button>
+        </view>
+      </view>
+      <!-- 填写地址 -->
       <van-cell-group>
-        <view>
-          <text>Name：</text>
-          <van-field value="{{Name}}" clearable placeholder="Please fill in the recipient‘s name" />
+        <view class="lable-item">
+          <text>Name:</text>
+          <van-field value="{{Name}}" model:value="{{Name}}" data-name="name" bind:blur="bindinput" placeholder="Please fill in the recipient‘s name" />
         </view>
 
-        <van-field value="{{Phone}}" placeholder="Please fill in the recipient‘s phone" clearable />
+        <view class="lable-item">
+          <text>Phone:</text>
+          <van-field value="{{Phone}}" model:value="{{Phone}}" maxlength="18" data-name="phone" bind:blur="bindinput" placeholder="Please fill in the recipient‘s phone" />
+        </view>
+
+        <view class="lable-item">
+          <text>Address:</text>
+          <van-field value="{{Address}}" model:value="{{Address}}" data-name="address" bind:blur="bindinput" placeholder="Please fill in the address" />
+        </view>
+
+        <view class="lable-item">
+          <text>City:</text>
+          <van-field value="{{City}}" model:value="{{City}}" data-name="city" bind:blur="bindinput" placeholder="Please fill in the city" />
+        </view>
+
+        <view class="lable-item">
+          <text>PostCode:</text>
+          <van-field value="{{PostCode}}" model:value="{{PostCode}}" data-name="postcode" bind:blur="bindinput" placeholder="Please fill in the postcode" />
+        </view>
+
+        <view class="lable-item">
+          <text>Country:</text>
+          <van-field value="{{Country}}" model:value="{{Country}}" bind:blur="bindinput" placeholder="Please select a country" />
+        </view>
+        <view class="default-bt" wx:if="{{typestr == ''}}">
+          <text>设为默认:</text>
+          <van-switch active-color="#00e166" checked="{{ checked }}" bind:change="onChange" size="50rpx" />
+        </view>
       </van-cell-group>
     </view>
   </view>
+  <!-- 按钮跳转 -->
   <view class="bt-box">
-    <button wx:if="{{type != ''}}" class="bt-item">立即转运</button>
-    <button wx:else class="bt-item">添加地址</button>
+    <button wx:if="{{typestr != ''}}" class="bt-item">立即转运</button>
+    <button wx:else class="bt-item" bindtap="addaddr">添加地址</button>
   </view>
 </view>

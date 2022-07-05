@@ -27,6 +27,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/addaddr/addaddr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/myaddr/myaddr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

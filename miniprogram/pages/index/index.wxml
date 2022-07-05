@@ -24,7 +24,7 @@
     </view>
   </view>
   <!-- 联系客服 -->
-  <view class="contact-box">
+  <view class="contact-box" bindtap="contact">
     <view class="service-img">
       <image src="../../assets/images/service.png"></image>
     </view>

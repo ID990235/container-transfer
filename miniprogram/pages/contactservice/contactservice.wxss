@@ -1,1 +1,6 @@
-/* pages/contactservice/contactservice.wxss */
+.bt {
+  width: 50vw;
+  background-color: #ee0a24;
+  border-radius: 50rpx;
+  color: white;
+}

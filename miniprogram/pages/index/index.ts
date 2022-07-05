@@ -53,7 +53,7 @@ Page({
           4: "广东EMS",
         }
         wx.navigateTo({
-          url: `/pages/addaddr/addaddr?type=${obj[res.tapIndex]}&&countries=${_this.data.countries}`
+          url: `/pages/addaddr/addaddr?typestr=${obj[res.tapIndex]}&&countries=${_this.data.countries}`
         })
       },
       fail(res) {
@@ -61,4 +61,9 @@ Page({
       }
     })
   },
+  contact() {
+    wx.navigateTo({
+      url: "/pages/contactservice/contactservice"
+    })
+  }
 })

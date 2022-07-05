@@ -18,7 +18,9 @@
 .receipt-info {
   width: 694rpx;
   height: 740rpx;
+  box-sizing: border-box;
   margin: 0 auto;
+  padding: 25rpx 10rpx 0;
   opacity: 0.85;
   border-radius: 6rpx;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
@@ -34,4 +36,72 @@
   background-color: #73c97c;
   border-radius: 50rpx;
   color: white;
+}
+
+van-cell-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lable-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lable-item text {
+  width: 140rpx;
+  text-align: right;
+}
+
+van-field {
+  width: 72vw;
+}
+
+.default-bt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 4rpx solid #BBBBBB;
+  height: 80rpx;
+}
+
+.top-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 40rpx 0 50rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  height: 110rpx;
+}
+
+.receipt-info .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90rpx;
+}
+
+.receipt-info .title {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.receipt-info .tip {
+  color: red;
+  font-size: 25rpx;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.right-bt {
+  color: #40b850;
+  background-color: #d9f1dd;
+  border-color: #82d18e;
+  font-size: 25rpx;
+  width: 160rpx;
+
 }

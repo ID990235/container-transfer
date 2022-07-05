@@ -1,0 +1,56 @@
+<!-- 有点击事件卡 -->
+<view wx:if="{{typestr}}">
+  <view wx:for="{{cardList}}" data-cardList="{{item.addtime}}" bindtap="getaddr" wx:key="index" class="addrcard">
+    <view class="card-info">
+      <view class="portrait">{{item.firstname}}</view>
+      <view class="info-box">
+        <view class="name-phone">
+          <view class="name">{{item.Name}}</view>
+          <view class="phone">{{item.Phone}}</view>
+        </view>
+        <view class="addrinfo">
+          <!-- MEGASYSTEMS INC 799 E DRAGRAM SUITE 5ATUCSON, AZ 85705 USA -->
+          {{item.Address}}
+        </view>
+      </view>
+    </view>
+    <view class="card-handle">
+      <view class="radio-bt">
+        <van-checkbox checked-color="#ed8f56" value="{{ item.checked }}" bind:change="onChange">默认寄件地址</van-checkbox>
+      </view>
+      <view>
+        <van-icon name="edit" size="44rpx" />
+        <van-icon class="delete" name="delete-o" size="44rpx" />
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 无点击事件卡 -->
+<view wx:else>
+  <van-radio-group value="{{ true }}" bind:change="onChange">
+    <view wx:for="{{cardList}}" wx:key="index" class="addrcard">
+      <view class="card-info">
+        <view class="portrait">{{item.firstname}}</view>
+        <view class="info-box">
+          <view class="name-phone">
+            <view class="name">{{item.Name}}</view>
+            <view class="phone">{{item.Phone}}</view>
+          </view>
+          <view class="addrinfo">
+            <!-- MEGASYSTEMS INC 799 E DRAGRAM SUITE 5ATUCSON, AZ 85705 USA -->
+            {{item.Address}}
+          </view>
+        </view>
+      </view>
+      <view class="card-handle">
+        <view class="radio-bt">
+          <van-radio checked-color="#ed8f56" name="{{item.checked}}">默认寄件地址</van-radio>
+        </view>
+        <view>
+          <van-icon name="edit" size="44rpx" />
+          <van-icon class="delete" name="delete-o" size="44rpx" />
+        </view>
+      </view>
+    </view>
+  </van-radio-group>
+</view>
