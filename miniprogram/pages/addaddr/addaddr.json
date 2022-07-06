@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "addrbox": "../../Components/addrbox/addrbox",
-    "van-field": "@vant/weapp/field/index",
-    "van-switch": "@vant/weapp/switch/index",
-    "van-icon": "@vant/weapp/icon/index"
-  }
-}

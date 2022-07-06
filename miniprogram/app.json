@@ -1,19 +1,20 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/coupons/coupons",
-    "pages/countries/countries",
-    "pages/entrepotaddr/entrepotaddr",
-    "pages/user/user",
-    "pages/order/order",
-    "pages/reckon/reckon",
-    "pages/notice/notice",
-    "pages/addaddr/addaddr",
-    "pages/activity/activity",
-    "pages/transferflow/transferflow",
-    "pages/contactservice/contactservice",
-    "pages/aboutus/aboutus",
-    "pages/myaddr/myaddr"
+    "pages/Tabbar/index/index",
+    "pages/Tabbar/user/user",
+    "pages/Tabbar/coupons/coupons",
+    "pages/Tabbar/order/order",
+    "pages/index-home/countries/countries",
+    "pages/index-home/entrepotaddr/entrepotaddr",
+    "pages/index-home/reckon/reckon",
+    "pages/index-user/transfernotice/transfernotice",
+    "pages/common/addaddr/addaddr",
+    "pages/index-user/activity/activity",
+    "pages/index-user/transferflow/transferflow",
+    "pages/index-user/contactservice/contactservice",
+    "pages/index-user/aboutus/aboutus",
+    "pages/index-user/myaddr/myaddr",
+    "pages/index-order/order-details/order-details"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,26 +23,27 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "list": [{
-        "pagePath": "pages/index/index",
+    "list": [
+      {
+        "pagePath": "pages/Tabbar/index/index",
         "text": "首页",
         "iconPath": "/assets/images/index.png",
         "selectedIconPath": "/assets/images/indexSelect.png"
       },
       {
-        "pagePath": "pages/coupons/coupons",
+        "pagePath": "pages/Tabbar/coupons/coupons",
         "text": "优惠券",
         "iconPath": "/assets/images/coupons.png",
         "selectedIconPath": "/assets/images/couponsSelect.png"
       },
       {
-        "pagePath": "pages/order/order",
+        "pagePath": "pages/Tabbar/order/order",
         "text": "订单信息",
         "iconPath": "/assets/images/order.png",
         "selectedIconPath": "/assets/images/orderSelect.png"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/Tabbar/user/user",
         "text": "集装箱转运",
         "iconPath": "/assets/images/user.png",
         "selectedIconPath": "/assets/images/userSelect.png"

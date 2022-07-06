@@ -1,0 +1,4 @@
+<view class="lable-item">
+  <text>{{inputData.title}}</text>
+  <van-field value="{{inputData.value}}" model:value="{{inputData.value}}" data-name="{{inputData.label}}" bind:blur="bindinput" placeholder="{{inputData.placeholder}}" />
+</view>

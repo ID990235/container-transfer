@@ -1,0 +1,20 @@
+van-cell-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lable-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lable-item text {
+  width: 140rpx;
+  text-align: right;
+}
+
+van-field {
+  width: 72vw;
+}

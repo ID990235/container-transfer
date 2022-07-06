@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "orderaddr": "../../../Components/order-addr/order-addr",
+    "orderbutton": "../../../Components/order-button/order-button",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "orderinfo": "../../../Components/order-info/order-info"
+  }
+}

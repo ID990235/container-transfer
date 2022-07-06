@@ -26,7 +26,7 @@ Component({
   methods: {
     toReckon() {
       wx.navigateTo({
-        url: '/pages/reckon/reckon'
+        url: '/pages/index-home/reckon/reckon'
       })
     }
   }

@@ -41,6 +41,27 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index-order/order-details/order-details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/common/addaddr/addaddr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/common/addaddr/addaddr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

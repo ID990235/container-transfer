@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "addrbox": "../../../Components/addrbox/addrbox"
+  },
+  "navigationBarTitleText": "集装箱转运仓",
+  "navigationBarBackgroundColor": "#0b73f7"
+}

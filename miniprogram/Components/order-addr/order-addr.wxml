@@ -1,0 +1,27 @@
+<!-- 订单详情地址组件 -->
+<view class="rder-addr_box">
+  <view class="addr">
+    <view class="left">
+      <image src="../../assets/images/location.png"></image>
+    </view>
+    <view class="right">
+      <view class="top">
+        <view class="name">集装箱仓库</view>
+        <view class="phone">13388888888<text class="copy" bindtap="clickCpoy">复制</text></view>
+      </view>
+      <view class="bottom">深圳市龙华区龙华街道工业路壹城环智中心C座2607室</view>
+    </view>
+  </view>
+  <view class="addr">
+    <view class="left2">
+      <image src="../../assets/images/city.png"></image>
+    </view>
+    <view class="right">
+      <view class="top">
+        <view class="name">集装箱仓库</view>
+        <view class="phone">13388888888</view>
+      </view>
+      <view class="bottom">深圳市龙华区龙华街道工业路壹城环智中心C座2607室</view>
+    </view>
+  </view>
+</view>

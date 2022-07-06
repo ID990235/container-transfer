@@ -1,0 +1,9 @@
+<view class="estimate-img">
+  <image src="../../../assets/images/estimate.png"></image>
+</view>
+<view class="estimate_freight">
+  <text class="title">预估运费</text>
+  <view class="">
+    
+  </view>
+</view>

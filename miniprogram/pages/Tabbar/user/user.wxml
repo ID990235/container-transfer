@@ -1,0 +1,49 @@
+<view class="user-container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="userinfo">
+      <view class="portrait">
+        <image src="../../../assets/images/portrait.jpg"></image>
+      </view>
+      <view class="textinfo">
+        <view><text class="name">HH</text></view>
+        <view class="coding">编码：HBK</view>
+      </view>
+    </view>
+  </view>
+  <!-- 主要内容 -->
+  <view class="main">
+    <view class="myorder">
+      <view class="order-top">
+        <text>我的订单</text>
+        <view class="allorder">全部订单<image src="../../../assets/images/arrowright2.png"></image>
+        </view>
+      </view>
+      <view class="order-bottom">
+        <view>
+          <van-icon name="paid" size="54rpx" color="#309bec" />
+          <view class="icontext">代付款</view>
+        </view>|
+        <view>
+          <van-icon name="logistics" size="54rpx" color="#309bec" />
+          <view class="icontext">待发货</view>
+        </view>|
+        <view>
+          <van-icon name="point-gift-o" size="54rpx" color="#309bec" />
+          <view class="icontext">待收货</view>
+        </view>|
+        <view>
+          <van-icon name="flower-o" size="54rpx" color="#309bec" />
+          <view class="icontext">待评价</view>
+        </view>
+      </view>
+    </view>
+    <view class="other">
+      <view wx:for="{{otherItem}}" wx:key="index" data-path="{{item.path}}" class="other-item" bindtap="topage"><text>{{item.name}}</text>
+        <view class="arrow-img">
+          <image src="../../../assets/images/arrowright2.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

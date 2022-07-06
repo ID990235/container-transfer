@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "addrbox": "../../../Components/addrbox/addrbox",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "addrinput": "../../../Components/addrinput/addrinput"
+  }
+}

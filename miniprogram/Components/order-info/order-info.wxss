@@ -1,0 +1,37 @@
+.order-info_box {
+  width: 92vw;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx;
+  margin: 0 auto;
+  opacity: 0.85;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.4);
+  border: 2rpx solid rgba(255, 255, 255, 100);
+}
+
+.copy {
+  margin-left: 15rpx;
+  color: #63c58b;
+}
+
+.info-item {
+  margin: 25rpx 0;
+}
+
+.fill {
+  color: #e27118;
+}
+
+.enter {
+  color: #ffd718;
+}
+
+.picking {
+  color: #ffd718;
+}
+
+.unpaid {
+  color: #ed4946;
+}

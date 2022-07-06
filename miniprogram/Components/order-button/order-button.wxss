@@ -1,0 +1,45 @@
+.order-button_box {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.fs {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  height: 8vh;
+}
+
+.fill-in .bt1,
+.packaging .bt1,
+.picking .bt1,
+.unpaid .bt1 {
+  background-color: #73c97c;
+  border-color: #73c97c;
+  color: white;
+}
+
+.fill-in .bt2 {
+  background-color: #e2e2e2;
+  border-color: #e2e2e2;
+}
+
+.packaging .bt2 {
+  background-color: #eb3941;
+  border-color: #eb3941;
+  color: white;
+}
+
+.unpaid .bt2 {
+  background-color: #eb3941;
+  border-color: #eb3941;
+  color: white;
+}

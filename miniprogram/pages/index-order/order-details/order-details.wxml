@@ -1,0 +1,21 @@
+<!-- 订单详情页 -->
+<view class="orderdetail-container">
+  <orderaddr bind:orderaddrcpoy="orderaddrcpoy"></orderaddr>
+  <!-- 输入订单 -->
+  <view class="order_box">
+    <view class="tip">
+      <van-icon name="warning-o" class="tip-icon" />快递全部到齐点击确认打包后，订单不可修改
+    </view>
+    <view class="info-form">
+      <label for="orderNum" class="order-input"><text class="star">*</text>快递个数
+        <input type="number" placeholder="请输入（输入后弹出快递单号位置）" class="input" id="orderNum" />
+      </label>
+      <view class="note-box">
+        <textarea placeholder="请输入（输入后弹出快递单号位置）" class="note" />
+      </view>
+    </view>
+  </view>
+  <!-- 订单基本信息 -->
+  <orderinfo orderinfo="{{orderinfo}}"></orderinfo>
+</view>
+<orderbutton orderinfo="{{orderinfo}}"></orderbutton>

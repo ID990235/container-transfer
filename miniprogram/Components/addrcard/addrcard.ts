@@ -4,33 +4,18 @@ Component({
     multipleSlots: true
   },
   properties: {
-    cardList: {
-      type: Array
+    carditem: {
+      type: Object
     },
     typestr: {
       type: String
     }
   },
   data: {
-    radio: wx.getStorageSync("radio"),
   },
   methods: {
     onChange(e: any) {
-      wx.setStorageSync("radio", e.detail)
-      const addaddrList = wx.getStorageSync('addaddr')
-      let addaddr = addaddrList.filter((item: any) => {
-        item.checked = false
-        if (item.addtime == e.detail) {
-        
-          item.checked = true
-          return item
-        }
-      });
-      let newaddaddr = addaddrList.filter((item: any) => !item.checked)
-      addaddr.push(...newaddaddr)
-      
-      wx.setStorageSync('addaddr', addaddr)
-
+      this.triggerEvent("addrradio", e)
     },
     getaddr(e: any) {
       const itemdata = e.currentTarget.dataset.cardlist

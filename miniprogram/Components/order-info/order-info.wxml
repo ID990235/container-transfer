@@ -1,0 +1,21 @@
+<view class="order-info_box">
+  <view class="info">
+    <view class="info-item">订单号：{{orderinfo.orderNum}}<text class="copy" bindtap="">复制</text></view>
+    <view class="info-item">转运路线：{{orderinfo.line}}</view>
+    <view class="info-item">预选渠道：{{orderinfo.channel}}</view>
+
+    <!-- 待填写 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 0}}">订单状态：<text class="{{orderinfo.status == 0? 'fill':''}}">{{orderinfo.orderStatus}}</text></view>
+    <!-- 待入仓 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 1}}">订单状态：<text class="{{orderinfo.status == 1? 'enter':''}}">{{orderinfo.orderStatus}}</text></view>
+    <!-- 客户确认打包后的待拣货 -->
+    <view class="info-item" wx:if="{{orderinfo.packaging== 1}}">订单状态：<text class="{{ orderinfo.packaging== 1 ? 'picking':''}}">{{orderinfo.orderStatus}}</text></view>
+    <!-- 待支付状态 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 3 && orderinfo.packaging== 1}}">订单状态：<text class="{{orderinfo.status == 3 && orderinfo.packaging== 1 ? 'unpaid':''}}">{{orderinfo.buyStatus}}</text></view>
+
+
+    <view class="info-item">下单时间：{{orderinfo.buyTime}}</view>
+    <!-- 入仓时间是客户确认打包后所显示的 -->
+    <view class="info-item" wx:if="{{orderinfo.packaging== 1}}">入仓时间：{{orderinfo.enterEntrepot}}</view>
+  </view>
+</view>

@@ -58,3 +58,7 @@
 .delete {
   margin-left: 20rpx;
 }
+
+.moren {
+  color: #ed8f56;
+}
