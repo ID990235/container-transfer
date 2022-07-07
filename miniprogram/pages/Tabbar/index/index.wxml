@@ -15,11 +15,13 @@
   <!-- 国家和地区 -->
   <view class="countries-box">
     <view class="countries">
-      <view class="cn-text"><text>中国</text></view>
-      <view class="feiji">
-        <image src="../../../assets/images/feiji.png"></image>
+      <view class="top">
+        <view class="cn-text"><text>中国</text></view>
+        <view class="feiji">
+          <image src="../../../assets/images/feiji.png"></image>
+        </view>
+        <view class="to-countries" bindtap="selectCountries"><text>{{countries ? countries : '大嘤弟国'}}</text></view>
       </view>
-      <view class="to-countries" bindtap="selectCountries"><text>{{countries ? countries : '大嘤弟国'}}</text></view>
       <button class="bt" bindtap="nowTransfer">选择渠道后转运</button>
     </view>
   </view>
@@ -37,7 +39,7 @@
     </view>
   </view>
   <!-- 转运和运费 -->
-  <buttonview liseview="{{liseview}}"></buttonview>
+  <buttonview liseview="{{liseview}}" bind:handleJump="handleJump"></buttonview>
   <!-- 轻松转运 -->
   <view class="easily-box">
     <text class="easily_title">轻松转运</text>

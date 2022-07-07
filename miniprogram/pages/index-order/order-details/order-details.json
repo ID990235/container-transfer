@@ -4,6 +4,7 @@
     "orderbutton": "../../../Components/order-button/order-button",
     "van-icon": "@vant/weapp/icon/index",
     "van-field": "@vant/weapp/field/index",
-    "orderinfo": "../../../Components/order-info/order-info"
+    "orderinfo": "../../../Components/order-info/order-info",
+    "orderinput": "../../../Components/order-input/order-input"
   }
 }

@@ -12,6 +12,8 @@ Component({
   },
 
   methods: {
-
+    handlePuy() { 
+      this.triggerEvent("handlePuy")
+    }
   }
 })

@@ -80,9 +80,9 @@ Page({
   },
   clickCountries(e: any) {
     const countries: any = e.target.dataset.item
-    wx.setStorageSync("countries", JSON.stringify(countries))
+    wx.setStorageSync("countries", countries)
     wx.switchTab({
-      url: `/pages/index/index`
+      url: `/pages/Tabbar/index/index`
     })
   }
 })

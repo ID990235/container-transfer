@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typestr: "",
     checked: false,
     Name: "",
     Phone: "",
@@ -54,15 +53,18 @@ Page({
         placeholder: "lease fill in the postcode",
         value: ""
       },
-    ]
+    ],
+    channel: "",
   },
   onLoad(options) {
     let typestr = options.typestr
     this.setData({ typestr })
   },
   onShow() {
-    this.echoaddr()
+    // this.echoaddr()
+    this.toBackPage()
   },
+  // 复制地址
   copyText() {
     wx.setClipboardData({
       data: "集装箱仓库，深圳市龙华区龙华街道工业路壹城环智中心C座2607，13388888888,518000",
@@ -106,31 +108,36 @@ Page({
     const City = this.data.inputData[3].value
     const PostCode = this.data.inputData[4].value
     const checked = this.data.checked
-
-    let addtime = new Date().getTime()
-    let obj = {
-      Name, Phone, Address, City, PostCode, checked, addtime
+    let obj = {}
+    for (let key in this.data.inputData) {
+      obj[this.data.inputData[key].label] = this.data.inputData[key].value
     }
-    if (Name && Phone && Address && City && PostCode ) {
-      let getaddaddr = wx.getStorageSync('addaddr')
-      // 判断之前是否已有默认地址
-      if (checked) {
-        getaddaddr = this.defaultAddr(getaddaddr)
-      }
-      // 拼接之前所添加的地址
-      let newarr: any = [...getaddaddr]
-      newarr.push(obj)
+    console.log(obj);
 
-      JSON.stringify(wx.setStorageSync('addaddr', newarr))
-      wx.navigateBack({
-        delta: 1
-      })
-    } else {
-      wx.showToast({
-        title: "请先输入完整地址后再添加喔~",
-        icon: "none"
-      })
-    }
+    // let addtime = new Date().getTime()
+    // let obj = {
+    //   Name, Phone, Address, City, PostCode, checked, addtime
+    // }
+    // if (Name && Phone && Address && City && PostCode) {
+    //   let getaddaddr = wx.getStorageSync('addaddr')
+    //   // 判断之前是否已有默认地址
+    //   if (checked) {
+    //     getaddaddr = this.defaultAddr(getaddaddr)
+    //   }
+    //   // 拼接之前所添加的地址
+    //   let newarr: any = [...getaddaddr]
+    //   newarr.push(obj)
+
+    //   JSON.stringify(wx.setStorageSync('addaddr', newarr))
+    //   wx.navigateBack({
+    //     delta: 1
+    //   })
+    // } else {
+    //   wx.showToast({
+    //     title: "请先输入完整地址后再添加喔~",
+    //     icon: "none"
+    //   })
+    // }
   },
   // 监听input框给每项赋值
   commitinput(e: any) {
@@ -155,19 +162,21 @@ Page({
     })
   },
   // 地址回显
-  echoaddr() {
-    const { Address, City, Country, Name, Phone, PostCode } = wx.getStorageSync('selectaddr')
-    this.setData({
-      Address, City, Country, Name, Phone, PostCode
-    })
-    // 回显完成后删除原本添加的
-    wx.removeStorage({
-      key: 'selectaddr',
-      success(res) {
-        console.log(res)
-      }
-    })
-  },
+  // echoaddr() {
+  //   const { Address, City, Country, Name, Phone, PostCode } = wx.getStorageSync('selectaddr')
+  //   this.setData({
+  //     Address, City, Country, Name, Phone, PostCode
+  //   })
+  //   console.log(Address, City, Country, Name, Phone, PostCode);
+
+  //   // 回显完成后删除原本添加的
+  //   wx.removeStorage({
+  //     key: 'selectaddr',
+  //     success(res) {
+  //       console.log(res)
+  //     }
+  //   })
+  // },
   // 是否有默认地址
   defaultAddr(oldData: []) {
     if (!Array.isArray(oldData)) return
@@ -178,10 +187,20 @@ Page({
       return item
     })
   },
-  // 跳转转运页面
+  // 跳转转运须知页面
   totransfer() {
     wx.navigateTo({
-      url: `/pages/index-user/transfernotice/transfernotice?typestr=${this.data.typestr}`
+      url: `/pages/index-user/transfernotice/transfernotice`
     })
+  },
+  // 判断上一个页面
+  toBackPage() {
+    let lastPage = getCurrentPages()[getCurrentPages().length - 2]
+
+    if (lastPage.route === 'pages/Tabbar/index/index') {
+      this.setData({
+        channel: lastPage.data.channel
+      })
+    }
   }
 })

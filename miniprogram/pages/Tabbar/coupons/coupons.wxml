@@ -1,0 +1,12 @@
+<!-- 优惠券页面 -->
+<view class="coupons-container">
+  <view class="youhui" bindtap="handelGetCoupons">
+    <image src="../../../assets/images/youhui1.png"></image>
+  </view>
+  <view class="youhui" bindtap="handelGetCoupons">
+    <image src="../../../assets/images/youhui2.png"></image>
+  </view>
+  <view class="youhui" bindtap="handelGetCoupons">
+    <image src="../../../assets/images/youhui3.png"></image>
+  </view>
+</view>

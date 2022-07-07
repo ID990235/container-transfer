@@ -5,7 +5,7 @@
 
 .order_box {
   width: 92vw;
-  height: 390rpx;
+  height: auto;
   margin: 48rpx auto;
   padding: 20rpx 34rpx;
   box-sizing: border-box;
@@ -64,7 +64,7 @@
   height: 200rpx;
   border-radius: 14rpx;
   padding: 10rpx;
-  margin-top: 10rpx;
+  margin: 10rpx 0;
   color: #888888;
   font-size: 25rpx;
   border: 2rpx solid rgba(187, 187, 187, 100);

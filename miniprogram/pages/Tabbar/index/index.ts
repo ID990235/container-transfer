@@ -3,6 +3,7 @@ Page({
   data: {
     liseview: [
       {
+        index: 0,
         class: "transfer-box",
         bind: "",
         title: "转运须知",
@@ -10,6 +11,7 @@ Page({
         img: "../../assets/images/car.png"
       },
       {
+        index: 1,
         class: "freight-box",
         bind: "toReckon",
         title: "运费估算",
@@ -17,7 +19,8 @@ Page({
         img: "../../assets/images/calculator.png"
       }],
     show: false,
-    countries: ''
+    countries: '',
+    channel: ""
   },
   onLoad(options: any) {
 
@@ -55,8 +58,15 @@ Page({
           3: "内地EMS",
           4: "广东EMS",
         }
+        
+        _this.setData({
+          channel: obj[res.tapIndex]
+        })
+        // wx.navigateTo({
+        //   url: `/pages/common/addaddr/addaddr?typestr=${obj[res.tapIndex]}&&countries=${_this.data.countries}`
+        // })
         wx.navigateTo({
-          url: `/pages/common/addaddr/addaddr?typestr=${obj[res.tapIndex]}&&countries=${_this.data.countries}`
+          url: '/pages/common/addaddr/addaddr'
         })
       },
       fail(res) {
@@ -69,5 +79,18 @@ Page({
     wx.navigateTo({
       url: "/pages/contactservice/contactservice"
     })
+  },
+  // 首页转运须知和运费估算跳转
+  handleJump(e: any) {
+    const index = e.detail.currentTarget.dataset.index
+    if (index == 0) {
+      wx.navigateTo({
+        url: "/pages/index-user/transfernotice/transfernotice"
+      })
+    } else if (index == 1) {
+      wx.navigateTo({
+        url: "/pages/index-home/reckon/reckon"
+      })
+    }
   }
 })

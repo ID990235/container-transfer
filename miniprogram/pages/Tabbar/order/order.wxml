@@ -1,2 +1,14 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<van-tabs color="#73c97c" active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <ordercard bind:handleDetails="handleDetails"></ordercard>
+  </van-tab>
+  <van-tab title="待支付">
+    <ordercard bind:handleDetails="handleDetails"></ordercard>
+  </van-tab>
+  <van-tab title="已支付">
+    <ordercard bind:handleDetails="handleDetails"></ordercard>
+  </van-tab>
+  <van-tab title="已完成">
+    <ordercard bind:handleDetails="handleDetails"></ordercard>
+  </van-tab>
+</van-tabs>

@@ -5,11 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typestr: "",
+    channel: "",
     disabled: true,
     buttontext: 5,
   },
   onLoad(options) {
+    this.toBackPage()
     this.delay()
     const typestr = options.typestr
     if (!typestr) return
@@ -18,9 +19,9 @@ Page({
     })
   },
   touser() {
-    wx.switchTab({
-      url: "/pages/Tabbar/user/user"
-    })
+    // let lastPage = getCurrentPages()[getCurrentPages().length - 2]
+    // console.log(lastPage);
+    wx.navigateBack()
   },
   // 跳转订单详情页
   toorderdetails() {
@@ -47,5 +48,14 @@ Page({
         })
       }
     }, 1000)
+  },
+  // 判断上一个页面
+  toBackPage() {
+    let lastPage = getCurrentPages()[getCurrentPages().length - 2]
+    if (lastPage.route === 'pages/common/addaddr/addaddr') {
+      this.setData({
+        channel: lastPage.data.channel
+      })
+    }
   }
 })

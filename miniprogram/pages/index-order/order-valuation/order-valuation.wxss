@@ -1,0 +1,118 @@
+.order-valuation-container {
+  padding: 42rpx 28rpx 120rpx;
+  overflow: hidden;
+}
+
+.bts {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  height: 8vh;
+}
+
+.contact {
+  background-color: #73c97c;
+  color: white;
+}
+
+.next-step {
+  background-color: #eb3941;
+  color: white;
+}
+
+.box {
+  width: 694rpx;
+  min-height: 320rpx;
+  margin: 0 auto 50rpx;
+  box-sizing: border-box;
+  padding: 32rpx 38rpx;
+  opacity: 0.85;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.4);
+  font-family: Arial;
+  border: 2rpx solid rgba(255, 255, 255, 100);
+  overflow: hidden;
+}
+
+.custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.orderNum {
+  font-size: 32rpx;
+}
+
+.title {
+  display: flex;
+}
+
+.shield-icon {
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.shield-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.title text {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-left: 20rpx;
+}
+
+.input input {
+  margin: 0 auto;
+  width: 568rpx;
+  height: 68rpx;
+  border-radius: 22rpx;
+  font-size: 28rpx;
+  font-family: Microsoft Yahei;
+  border: 2rpx solid rgba(187, 187, 187, 100);
+}
+
+.valuation1,
+.valuation2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.tip {
+  display: flex;
+  font-size: 24rpx;
+  color: red;
+  line-height: 35rpx;
+}
+
+.redtext {
+  width: 582rpx;
+}
+
+.loss-risk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60rpx;
+  border-bottom: 4rpx solid #d7d7d7;
+}
+
+.loss-risk text {
+  font-size: 28rpx;
+}

@@ -1,18 +1,11 @@
 <!-- 我的地址页面 -->
 <view class="myaddr-container">
-  <block wx:if="{{typestr}}">
-    <addrcard wx:for="{{cardList}}" bind:addrradio="clickRadio" wx:key="index" carditem="{{item}}" typestr="{{typestr}}"></addrcard>
-  </block>
-  <block wx:else>
-    <addrcard wx:for="{{cardList}}" carditem="{{item}}" bind:addrradio="clickRadio" wx:key="index"></addrcard>
-  </block>
-
-
+  <addrcard wx:for="{{cardList}}" carditem="{{item}}" bind:handlegetaddr="handleGetAddr" bind:addrradio="clickRadio" wx:key="index"></addrcard>
 
   <van-empty wx:if="{{!empty}}" description="亲，你还没有添加地址信息喔~">
     <button class="bt" bindtap="addaddr">添加地址</button>
   </van-empty>
-  <view wx:elif="{{!typestr}}" class="bottom-box">
+  <view wx:elif="{{!channel}}" class="bottom-box">
     <button class="bt-2" bindtap="addaddr">添加地址</button>
   </view>
 </view>

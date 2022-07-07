@@ -19,7 +19,7 @@
     </view>
     <view class="time">2020-11-02 23:46:48</view>
     <view class="bt-box">
-      <button wx:if="{{!typestr}}" class="bt" bindtap="touser">已阅读</button>
+      <button wx:if="{{!channel}}" class="bt" bindtap="touser">已阅读</button>
       <button wx:else class="bt" disabled="{{disabled}}" bindtap="toorderdetails">{{buttontext}}</button>
     </view>
   </view>

@@ -1,0 +1,153 @@
+.get-coupons-container {
+  padding: 50rpx 20rpx 200rpx;
+}
+
+.coupons-info {
+  display: flex;
+  flex-direction: column;
+  width: 710rpx;
+  height: 240rpx;
+  margin: 0 auto;
+  border-radius: 12rpx;
+  background-color: rgba(255, 255, 255, 100);
+}
+
+.coupons-top {
+  display: flex;
+  justify-content: space-around;
+  flex: 2.5;
+}
+
+.coupons-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  border-top: 4rpx dashed #f4dddd;
+}
+
+.coupons-bottom text {
+  font-size: 24rpx;
+  font-family: PingFangSC-regular;
+  margin-left: 50rpx;
+}
+
+.coupons-bottom .down-arrow {
+  margin-right: 20rpx;
+}
+
+.t-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 212rpx;
+  border-right: 4rpx dashed #f4dddd;
+}
+
+
+.t-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 2.2;
+  padding-left: 20rpx;
+}
+
+.money {
+  font-size: 80rpx;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 25rpx;
+}
+
+.reduction {
+  font-size: 12px;
+  font-family: PingFangSC-regular;
+}
+
+.r-top {
+  display: flex;
+}
+
+.manjian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  width: 88rpx;
+  height: 30rpx;
+  background-color: rgba(246, 57, 13, 100);
+  color: white;
+}
+
+.wumenkan {
+  margin-left: 10rpx;
+  color: rgba(68, 68, 68, 100);
+  font-size: 26rpx;
+  font-family: PingFangSC-regular;
+}
+
+.r-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 52rpx;
+  border-radius: 34rpx;
+  background-color: rgba(246, 57, 13, 100);
+  font-size: 24rpx;
+  color: white;
+}
+
+.expire {
+  font-size: 24rpx;
+  font-family: PingFangSC-regular;
+  color: #9c9bad;
+}
+
+.only {
+  color: rgba(246, 57, 13, 100);
+  font-size: 24rpx;
+  font-family: PingFangSC-regular;
+  margin-left: 20rpx;
+}
+
+.use-notice {
+  margin-top: 40rpx;
+  padding: 0 35rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-family: PingFangSC-regular;
+}
+
+.validity,
+.validity .title {
+  font-size: 28rpx;
+  margin-top: 28rpx;
+}
+
+.not-user {
+  font-size: 28rpx;
+  margin-top: 60rpx;
+}
+
+.use-notice .item {
+  margin: 20rpx 0;
+}
+
+.rules {
+  font-size: 28rpx;
+  margin-top: 60rpx;
+}

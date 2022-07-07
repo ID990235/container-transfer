@@ -1,1 +1,15 @@
-/* pages/coupons/coupons.wxss */
+.coupons-container {
+  padding: 60rpx 42rpx 100rpx;
+}
+
+.youhui {
+  width: 666rpx;
+  height: 240rpx;
+  border-radius: 24rpx;
+  margin: 0 auto 60rpx;
+}
+
+.youhui image {
+  width: 100%;
+  height: 100%;
+}

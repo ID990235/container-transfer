@@ -12,22 +12,12 @@ Component({
       value: [],
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
 
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-    toReckon() {
-      wx.navigateTo({
-        url: '/pages/index-home/reckon/reckon'
-      })
+    handleJump(e: any) {
+      this.triggerEvent("handleJump", e)
     }
   }
 })

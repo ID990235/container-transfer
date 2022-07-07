@@ -1,0 +1,25 @@
+<view class="order-card_box">
+  <view class="orderNum">订单号：20220509140712345678<text class="copy" bindtap="copyOrder">复制</text></view>
+  <view class="status-info">
+    <view class="cn">中国</view>
+    <view class="status">
+      <view class="fj">
+        <image src="../../assets/images/feiji2.png"></image>
+      </view>
+      <view class="status-text">待入仓</view>
+      <!-- <view class="status-text">待填写</view>
+      <view class="status-text">待支付</view>
+      <view class="status-text">已出仓</view>
+      <view class="status-text">已支付</view>
+      <view class="status-text">已完成</view> -->
+    </view>
+    <view class="wg">美国</view>
+  </view>
+  <view class="bts">
+    <button class="red">确认打包</button>
+    <button class="red">物流详情</button>
+    <!-- <button class="red">去支付</button> -->
+    <button class="green">去支付</button>
+    <button class="detail" bindtap="handleDetails">详情</button>
+  </view>
+</view>

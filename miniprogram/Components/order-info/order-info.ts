@@ -10,6 +10,8 @@ Component({
 
   },
   methods: {
-
+    copyorder() {
+      this.triggerEvent("copyorder", this.data.orderinfo.orderNum)
+    }
   }
 })

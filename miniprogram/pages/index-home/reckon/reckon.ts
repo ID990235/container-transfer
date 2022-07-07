@@ -1,66 +1,37 @@
 // pages/reckon/reckon.ts
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    channel: "普通货物",
+    money: "",
+    weight: "",
+    volume: ""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad() {
 
   },
+  // 选择渠道
+  channel() {
+    let _this = this
+    wx.showActionSheet({
+      itemList: ['普通货物', '电子产品', '液体粉末', '内地EMS', '广东EMS'],
+      itemColor: "#73c97c",
+      success(res) {
+        let obj: Object = {
+          0: "普通货物",
+          1: "电子产品",
+          2: "液体粉末",
+          3: "内地EMS",
+          4: "广东EMS",
+        }
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+        _this.setData({
+          channel: obj[res.tapIndex]
+        })
+      },
+      fail(res) {
+        console.log(res);
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

@@ -1,6 +1,6 @@
 <view class="order-info_box">
   <view class="info">
-    <view class="info-item">订单号：{{orderinfo.orderNum}}<text class="copy" bindtap="">复制</text></view>
+    <view class="info-item">订单号：{{orderinfo.orderNum}}<text class="copy" bindtap="copyorder">复制</text></view>
     <view class="info-item">转运路线：{{orderinfo.line}}</view>
     <view class="info-item">预选渠道：{{orderinfo.channel}}</view>
 

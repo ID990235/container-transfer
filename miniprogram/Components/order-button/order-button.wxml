@@ -21,6 +21,6 @@
   <!-- 待支付 -->
   <view class="unpaid fs" wx:elif="{{orderinfo.status==3}}">
     <button open-type="contact" class="bt1">联系客服</button>
-    <button class="bt2">支付选项</button>
+    <button class="bt2" bindtap="handlePuy">支付选项</button>
   </view>
 </view>

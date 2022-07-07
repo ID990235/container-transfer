@@ -8,14 +8,15 @@
     </view>
     <view class="info-form">
       <label for="orderNum" class="order-input"><text class="star">*</text>快递个数
-        <input type="number" placeholder="请输入（输入后弹出快递单号位置）" class="input" id="orderNum" />
+        <input type="number" bindinput="bindinput" model:value="{{value}}" placeholder="请输入（输入后弹出快递单号位置）" class="input" id="orderNum" bindblur="handleBindBlur" disabled="{{disabled}}" />
       </label>
       <view class="note-box">
         <textarea placeholder="请输入（输入后弹出快递单号位置）" class="note" />
       </view>
     </view>
+    <orderinput value="{{value}}" inputList="{{inputList}}" bind:replenishorder="replenishorder" bind:deleteorder="deleteorder" bind:handleInputChange="handleInputChange"></orderinput>
   </view>
   <!-- 订单基本信息 -->
-  <orderinfo orderinfo="{{orderinfo}}"></orderinfo>
+  <orderinfo orderinfo="{{orderinfo}}" bind:copyorder="copyorder"></orderinfo>
 </view>
-<orderbutton orderinfo="{{orderinfo}}"></orderbutton>
+<orderbutton orderinfo="{{orderinfo}}" bind:handlePuy="handlePuy"></orderbutton>
