@@ -1,0 +1,345 @@
+.puy-details-container {
+  padding: 18rpx 28rpx 100rpx;
+}
+
+.addr-info {
+  width: 100%;
+  height: 200rpx;
+  margin: 0 auto;
+  padding: 30rpx 28rpx;
+  box-sizing: border-box;
+  opacity: 0.85;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.4);
+  font-family: Arial;
+  border: 2rpx solid rgba(255, 255, 255, 100);
+}
+
+.addr {
+  display: flex;
+  align-items: center;
+  height: 140rpx;
+}
+
+.addr .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  width: 52rpx;
+  height: 52rpx;
+  background-color: #40b850;
+  border-radius: 50rpx;
+  border: 1px solid rgba(64, 184, 80, 100);
+}
+
+.addr .left2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+  width: 52rpx;
+  height: 52rpx;
+  background-color: #4c168e;
+  border-radius: 50rpx;
+  border: 1px solid rgba(64, 184, 80, 100);
+}
+
+.addr .left image {
+  width: 80%;
+  height: 80%;
+}
+
+.addr .left2 image {
+  width: 80%;
+  height: 80%;
+}
+
+.addr .right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120rpx;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  width: 440rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-right: 40rpx;
+}
+
+.phone {
+  font-size: 25rpx;
+  font-weight: 500;
+}
+
+.bottom {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 40rpx;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 716rpx;
+  opacity: 0.85;
+  margin: 28rpx auto 0;
+  padding: 13rpx 12rpx 0 30rpx;
+  box-sizing: border-box;
+  border-radius: 6rpx;
+  box-shadow: 0px 4rpx 20rpx 0px rgba(0, 0, 0, 0.4);
+  font-family: Arial;
+  border: 2rpx solid rgba(255, 255, 255, 100);
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 14rpx 0;
+  font-size: 28rpx;
+}
+
+.red {
+  margin-right: 10rpx;
+  color: red;
+}
+
+.coupons-icon {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.coupons-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.coupons-l {
+  display: flex;
+}
+
+.coupons-l text {
+  margin-left: 10rpx;
+}
+
+.right-arrow {
+  position: relative;
+  margin-bottom: 15rpx;
+}
+
+.right-arrow:before {
+  content: '';
+  position: absolute;
+  height: 10rpx;
+  width: 10rpx;
+  border-width: 0 4rpx 4rpx 0;
+  border-style: solid;
+  color: #101010;
+  transform: rotate(-45deg);
+}
+
+.coupons-r {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.tip {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  border-bottom: 4rpx solid #bbbbbb;
+  color: red;
+}
+
+.calculate {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 70rpx;
+  color: #8f918f;
+  font-size: 25rpx;
+}
+
+.discounts {
+  color: red;
+}
+
+.subtotal {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #000000;
+}
+
+.pay-box {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: 9vh;
+  width: 100%;
+}
+
+.treaty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 480rpx;
+  height: 100%;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 79);
+  font-family: Arial;
+  border: 1rpx solid rgba(226, 226, 226, 100);
+}
+
+.pay-bt {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #e70707;
+  border-radius: 0;
+  color: white;
+}
+
+.total {
+  font-size: 28rpx;
+}
+
+.radio {
+  font-size: 24rpx;
+}
+
+.popups {
+  position: relative;
+  padding: 10rpx 10rpx;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.agree_bt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 80rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 446rpx;
+  height: 90rpx;
+  border-radius: 94rpx;
+  background-color: rgba(231, 105, 29, 100);
+  color: rgba(255, 255, 255, 100);
+  font-size: 20px;
+  font-family: Microsoft Yahei;
+}
+
+.agreement-text {
+  height: 84%;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: 28rpx;
+  color: #888888;
+}
+
+.agreement-item {
+  margin-bottom: 40rpx;
+}
+
+.Select-coupons_box {
+  position: relative;
+  height: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150rpx;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial;
+}
+
+.card-box {
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  height: 520rpx;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 140rpx;
+  border-bottom: 4rpx solid #F4F4F4;
+}
+
+.card-item .left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.theme {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-regular;
+}
+
+.content {
+  color: rgba(136, 136, 136, 100);
+  font-size: 24rpx;
+  font-family: PingFangSC-regular;
+  margin-bottom: 20rpx;
+}
+
+.card-item .right {
+  display: flex;
+  align-items: center;
+}
+
+.discounts-sum {
+  margin-right: 25rpx;
+  color: rgba(246, 94, 47, 100);
+  font-size: 24rpx;
+  font-family: PingFangSC-regular;
+}
+
+.receive-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 130rpx;
+  background-color: rgba(255, 255, 255, 100);
+}
+
+.receive-box button {
+  width: 400rpx;
+  height: 72rpx;
+  border-radius: 50rpx;
+  background-color: rgba(1, 154, 246, 100);
+  color: rgba(255, 255, 255, 100);
+  font-size: 28rpx;
+}

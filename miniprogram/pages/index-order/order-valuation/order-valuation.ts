@@ -10,11 +10,11 @@ Page({
   onShow() {
 
   },
-  onChange1({ detail }) {
-    this.setData({ checked1: detail });
+  onChange1(e: any) {
+    this.setData({ checked1: e.detail });
   },
-  onChange2({ detail }) {
-    this.setData({ checked2: detail });
+  onChange2(e: any) {
+    this.setData({ checked2: e.detail });
   },
   // 计算保价价格
   handleCalculate() {
@@ -38,6 +38,9 @@ Page({
           console.log('用户承担保险')
         } else if (res.cancel) {
           console.log('用户购买保险')
+          wx.navigateTo({
+            url: "/pages/index-order/puy-details/puy-details"
+          })
         }
       }
     })

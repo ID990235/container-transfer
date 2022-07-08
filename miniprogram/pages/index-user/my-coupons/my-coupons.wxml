@@ -1,0 +1,5 @@
+<view class="my-coupons-container">
+  <containercard></containercard>
+
+  <button class="exchange" bindtap="handleExchange">兑换优惠券</button>
+</view>

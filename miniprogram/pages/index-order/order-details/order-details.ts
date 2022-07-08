@@ -5,16 +5,21 @@ Page({
       orderNum: 20220509140712345678,
       line: "中国-美国",
       channel: "普通货物",
-      orderStatus: "待填写",
+      fillIn: "待填写",
+      dairc: "待入仓",
+      daijh: "待拣货",
+      daicc: "待出仓",
+      daizf: "待支付",
       buyStatus: "待支付",
-      buyTime: "2022-05-09 14:07:12",
-      enterEntrepot: "2022-05-18 18:07:12",
-      status: 3,
-      packaging: 1
+      buyTime: "2022-05-09 14:07:12",  //  下单时间模拟
+      enterEntrepot: "2022-05-18 18:07:12", // 入仓时间模拟
+      status: 4,  // 流程状态 0 为待处理(待填写) 1 为有些已入仓有些未入仓 2 为都已入库但点击未打包(可以点击打包) 3为待拣货  4 为待支付(此时返回称重图片、打包备注和分拣备注等)
+      packaging: 1, // 模拟打包状态  1 为打包  0 为未打包
     },
     value: "",
     inputList: [],
-    disabled: false
+    disabled: false,
+    img: "/images/test.png"
   },
   onLoad() {
 
@@ -83,7 +88,7 @@ Page({
       success(res: any) {
         if (res.confirm) {
           _this.setData({
-            value: ++value
+            value: (++value).toString()
           })
         }
       }
@@ -98,8 +103,15 @@ Page({
 
     this.setData({
       inputList: arr,
-      value: value - 1
+      value: (value - 1).toString()
     })
+
+    if (this.data.inputList.length <= 0) {
+      this.setData({
+        disabled: false,
+        value: ''
+      })
+    }
 
   },
   // 输入的时候改变数组里的值
@@ -127,7 +139,7 @@ Page({
   handleBindBlur() {
     if (this.data.value != '') {
       this.setData({
-        disabled: true
+        disabled: true,
       })
     }
   },
@@ -136,5 +148,23 @@ Page({
     wx.navigateTo({
       url: "/pages/index-order/order-valuation/order-valuation"
     })
+  },
+  // 取消订单
+  handleCancel() {
+    wx.showModal({
+      title: "是否取消订单",
+      content: "取消订单后，订单将不能进行后续操作是否要继续？",
+      success(res: any) {
+        if (res.confirm) {
+          console.log('用户取消订单')
+        } else if (res.cancel) {
+          console.log('用户不取消订单')
+        }
+      }
+    })
+  },
+  // 放大图片
+  handleBigImg() {
+   
   }
 })

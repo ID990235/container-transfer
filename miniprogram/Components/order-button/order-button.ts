@@ -12,8 +12,11 @@ Component({
   },
 
   methods: {
-    handlePuy() { 
+    handlePuy() {
       this.triggerEvent("handlePuy")
+    },
+    handleCancel() { 
+      this.triggerEvent("handleCancel")
     }
   }
 })

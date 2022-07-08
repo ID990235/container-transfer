@@ -43,3 +43,9 @@ button {
   border-color: #eb3941;
   color: white;
 }
+
+.contact {
+  background-color: #e7691d;
+  border-color: #e7691d;
+  color: white;
+}

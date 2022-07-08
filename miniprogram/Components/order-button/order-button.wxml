@@ -2,24 +2,24 @@
   <!-- 待填写 -->
   <view class="fill-in fs" wx:if="{{orderinfo.status==0}}">
     <button open-type="contact" class="bt1">联系客服</button>
-    <button class="bt2">取消订单</button>
+    <button class="bt2" bindtap="handleCancel">取消订单</button>
   </view>
-  <!-- 待入仓-打包 -->
+  <!-- 有些已入仓一些未入仓-未打包 -->
   <view open-type="contact" class="packaging fs" wx:elif="{{orderinfo.status==1}}">
-    <button class="bt1">联系客服</button>
+    <button open-type="contact" class="bt1">联系客服</button>
     <button class="bt2">确认打包</button>
   </view>
-  <!-- 有些已入仓一些未入仓 -->
-  <view open-type="contact" class="packaging fs" wx:elif="{{orderinfo.status==1}}">
-    <button class="bt1">联系客服</button>
+  <!-- 全部已入库(已入仓)-未打包-->
+  <view open-type="contact" class="packaging fs" wx:elif="{{orderinfo.status==2 && orderinfo.packaging == 0}}">
+    <button open-type="contact" class="contact">联系客服</button>
     <button class="bt2">确认打包</button>
   </view>
-  <!-- 已经全部入仓且客户确认打包 -->
-  <view class="picking" wx:elif="{{orderinfo.status==2}}">
+  <!-- 已经全部入仓且客户确认打包(待拣货) -->
+  <view class="picking" wx:elif="{{orderinfo.status==3 && orderinfo.packaging == 1}}">
     <button open-type="contact" class="bt1">联系客服</button>
   </view>
   <!-- 待支付 -->
-  <view class="unpaid fs" wx:elif="{{orderinfo.status==3}}">
+  <view class="unpaid fs" wx:elif="{{orderinfo.status==4}}">
     <button open-type="contact" class="bt1">联系客服</button>
     <button class="bt2" bindtap="handlePuy">支付选项</button>
   </view>

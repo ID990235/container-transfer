@@ -1,0 +1,3 @@
+<view class="order-tip_box {{status == 1?'green':'orange'}}">
+  <view>{{status == 4 ? '转运账单已生成，请及时查看账单信息并支付':'您的快递包裹已全部到达仓库，请及时确认捡货打包。' }}</view>
+</view>

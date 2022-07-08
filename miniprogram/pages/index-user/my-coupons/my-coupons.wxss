@@ -1,0 +1,17 @@
+.my-coupons-container {
+  padding: 40rpx 24rpx 100rpx;
+}
+
+.exchange {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 352rpx;
+  height: 72rpx;
+  border-radius: 8rpx;
+  background-color: rgba(11, 115, 247, 100);
+  color: rgba(255, 255, 255, 100);
+  font-size: 28rpx;
+  font-family: Microsoft Yahei;
+}

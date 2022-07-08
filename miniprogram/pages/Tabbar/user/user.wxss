@@ -110,6 +110,7 @@
 .other-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 60rpx;
   border-bottom: 6rpx solid #F1F1F1;
 }

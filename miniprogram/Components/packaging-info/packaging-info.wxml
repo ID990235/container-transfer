@@ -1,0 +1,56 @@
+<view class="packaging-info_box">
+  <view class="text-item">运费：¥ 138.00</view>
+  <view class="text-item">附加费：¥ 0.00</view>
+  <view class="text-item">称重重量：5.6 kg</view>
+  <view class="text-item">分拣备注：<text class="orange">已拆封分拣，统一归类</text></view>
+  <view class="text-item">打包备注：<text class="orange">东西太多，已统一打包加固</text></view>
+  <view class="text-item">
+    称重图片：
+    <view class="imgs-box">
+      <view class="imgs">
+        <image src="../../assets/images/test.png"></image>
+      </view>
+      <view class="imgs">
+        <image src="../../assets/images/test.png"></image>
+      </view>
+      <view class="imgs">
+        <image src="../../assets/images/test.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="text-item">
+    账单：
+    <view class="bill-box">
+      <view class="bill-item">
+        <view class="left">
+          <image src="../../assets/images/test.png"></image>
+        </view>
+        <view class="right">
+          <view class="title">包裹一</view>
+          <view class="info">
+            <view>属性：{{}}</view>
+            <view>长宽高：{{}}</view>
+            <view>计费重量：{{}}</view>
+            <view>计费方式：{{}}</view>
+            <view>运费：{{}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="bill-item">
+        <view class="left">
+          <image src="../../assets/images/test.png" bindtap="handleBigImg"></image>
+        </view>
+        <view class="right">
+          <view class="title">包裹一</view>
+          <view class="info">
+            <view>属性：{{}}</view>
+            <view>长宽高：{{}}</view>
+            <view>计费重量：{{}}</view>
+            <view>计费方式：{{}}</view>
+            <view>运费：{{}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -2,14 +2,14 @@
 <view>
   <view class="addrcard" data-carditem="{{carditem}}" bindtap="handleGetAddr">
     <view class="card-info">
-      <view class="portrait">{{tools.portrait(carditem.Name)}}</view>
+      <view class="portrait">{{tools.portrait(carditem.name)}}</view>
       <view class="info-box">
         <view class="name-phone">
-          <view class="name">{{carditem.Name}}</view>
-          <view class="phone">{{tools.sub(carditem.Phone, 3, 4)}}</view>
+          <view class="name">{{carditem.name}}</view>
+          <view class="phone">{{tools.sub(carditem.phone, 3, 4)}}</view>
         </view>
         <view class="addrinfo">
-          {{carditem.Address}}
+          {{carditem.address}}
         </view>
       </view>
     </view>

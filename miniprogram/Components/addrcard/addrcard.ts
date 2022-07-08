@@ -6,9 +6,6 @@ Component({
   properties: {
     carditem: {
       type: Object
-    },
-    typestr: {
-      type: String
     }
   },
   data: {

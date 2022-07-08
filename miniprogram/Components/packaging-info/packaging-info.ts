@@ -1,5 +1,5 @@
-// Components/order-card/order-card.ts
-let that: any
+// Components/packaging-info/packaging-info.ts
+let that: any;
 Component({
   options: {
     multipleSlots: true
@@ -7,6 +7,7 @@ Component({
   properties: {
 
   },
+
   data: {
 
   },
@@ -16,8 +17,8 @@ Component({
     }
   },
   methods: {
-    handleDetails() {
-      this.triggerEvent("handleDetails")
+    handleBigImg() {
+      that.triggerEvent("handleBigImg")
     }
   }
 })

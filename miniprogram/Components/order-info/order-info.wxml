@@ -5,13 +5,16 @@
     <view class="info-item">预选渠道：{{orderinfo.channel}}</view>
 
     <!-- 待填写 -->
-    <view class="info-item" wx:if="{{orderinfo.status == 0}}">订单状态：<text class="{{orderinfo.status == 0? 'fill':''}}">{{orderinfo.orderStatus}}</text></view>
-    <!-- 待入仓 -->
-    <view class="info-item" wx:if="{{orderinfo.status == 1}}">订单状态：<text class="{{orderinfo.status == 1? 'enter':''}}">{{orderinfo.orderStatus}}</text></view>
-    <!-- 客户确认打包后的待拣货 -->
-    <view class="info-item" wx:if="{{orderinfo.packaging== 1}}">订单状态：<text class="{{ orderinfo.packaging== 1 ? 'picking':''}}">{{orderinfo.orderStatus}}</text></view>
+    <view class="info-item" wx:if="{{orderinfo.status == 0}}">订单状态：<text class="{{orderinfo.status == 0? 'fill':''}}">{{orderinfo.fillIn}}</text></view>
+    <!-- 有些已入仓一些未入仓-未打包 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 1}}">订单状态：<text class="{{orderinfo.status == 1? 'enter':''}}">{{orderinfo.dairc}}</text></view>
+    <!-- 全部已入库(已入仓)-未打包 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 2 && orderinfo.packaging == 0}}">订单状态：<text class="{{orderinfo.status == 2 && orderinfo.packaging == 0 ? 'enter':''}}">{{orderinfo.dairc}}</text></view>
+    <!-- 客户确认打包后的-待拣货 -->
+    <view class="info-item" wx:if="{{orderinfo.status == 3 &&orderinfo.packaging== 1}}">订单状态：<text class="{{ orderinfo.packaging== 1 ? 'picking':''}}">{{orderinfo.daijh}}</text></view>
     <!-- 待支付状态 -->
-    <view class="info-item" wx:if="{{orderinfo.status == 3 && orderinfo.packaging== 1}}">订单状态：<text class="{{orderinfo.status == 3 && orderinfo.packaging== 1 ? 'unpaid':''}}">{{orderinfo.buyStatus}}</text></view>
+    <view class="info-item" wx:if="{{orderinfo.status == 4}}">订单状态：<text class="{{orderinfo.status == 4 ? 'picking':''}}">{{orderinfo.daicc}}</text></view>
+    <view class="info-item" wx:if="{{orderinfo.status == 4}}">支付状态：<text class="{{orderinfo.status == 4 ? 'unpaid':''}}">{{orderinfo.buyStatus}}</text></view>
 
 
     <view class="info-item">下单时间：{{orderinfo.buyTime}}</view>

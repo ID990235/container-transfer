@@ -104,6 +104,34 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index-user/my-coupons/my-coupons",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index-order/puy-details/puy-details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/common/addaddr/addaddr",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index-order/puy-details/puy-details",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

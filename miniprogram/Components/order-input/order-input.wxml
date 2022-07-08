@@ -1,9 +1,8 @@
 <view class="orderinput_box">
   <view wx:for="{{value}}" wx:key="*this" class="input-box">{{index+1}}.
-    <!-- <view class="input-list"> -->
     <input class="input-list" type="number" maxlength="{{18}}" disabled="{{inputList[index].disabled}}" placeholder="请输入快递单号" bindchange="handleInputChange" data-index="{{index}}" value="{{inputList[index].value}}" id="{{index}}" />
-    <!-- </view> -->
-    <van-icon bindtap="deleteorder" data-index="{{index}}" class="delete {{inputList[index].disabled ? 'disabled':''}}" name="delete-o" />
+    <!-- <van-icon bindtap="deleteorder" data-index="{{index}}" class="delete " name="delete-o" /> -->
+    <view class="delete purple">待入仓</view>
   </view>
   <view wx:if="{{value}}" class="replenish" bindtap="replenishorder"><text class="add">+</text>补充快递单号</view>
 </view>

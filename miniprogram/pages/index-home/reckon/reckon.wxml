@@ -11,7 +11,7 @@
       </view>
       <view class="weight">
         <text>预估重量</text>
-        <input class="input" model:value="{{weight}}" type="number" maxlength="{{10}}" placeholder="请输入重量" />
+        <input class="input" bindblur="handleWeight" model:value="{{weight}}" type="number" maxlength="{{10}}" placeholder="请输入重量" />
       </view>
     </view>
     <view class="volume">
@@ -20,7 +20,7 @@
     </view>
     <view class="freight">
       <text>预估运费（实际结果以订单为准）</text>
-      <text>{{money?"":"¥ 0.00"}}</text>
+      <text>{{money?money:"¥ 0.00"}}</text>
     </view>
   </view>
 </view>

@@ -12,7 +12,7 @@ Page({
   onShow() {
 
   },
-  onChange(event) {
+  onChange(event: any) {
     wx.showToast({
       title: `切换到标签 ${event.detail.name}`,
       icon: 'none',

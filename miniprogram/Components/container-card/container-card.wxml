@@ -1,0 +1,35 @@
+<view class="container_box">
+  <!-- <view class="left">
+    <image src="../../assets/images/shiyong.png"></image>
+    <view class="money">15<text>元</text></view>
+    <view class="threshold">满100元使用</view>
+  </view>
+  <view class="right">
+    <view class="title">新品优惠券</view>
+    <view class="date">2020.10.10 - 2020.11.11</view>
+  </view>
+  <view class="upper-right">
+    <text>抵扣券</text>
+    <image src="../../assets/images/shiyong-1.png"></image>
+  </view> -->
+  <view class="left">
+    <!-- <image src="../../assets/images/shiyong.png"></image> -->
+    <!-- <image src="../../assets/images/yiyong.png"></image> -->
+    <image src="../../assets/images/guoqi.png"></image>
+    <view class="money shouzhong">免首重</view>
+    <view class="threshold"></view>
+  </view>
+  <view class="right">
+    <view class="title">无首重</view>
+    <view class="date">2020.10.10 - 2020.11.11</view>
+  </view>
+  <view class="upper-right">
+    <text>首重券</text>
+    <!-- <image src="../../assets/images/shiyong-1.png"></image> -->
+    <image src="../../assets/images/guoqi-1.png"></image>
+  </view>
+  <view class="other">
+    <!-- <image src="../../assets/images/shiyong-2.png"></image> -->
+    <image src="../../assets/images/guoqi-2.png"></image>
+  </view>
+</view>

@@ -12,6 +12,7 @@ Page({
       },
       {
         name: "我的优惠卷",
+        path: "my-coupons"
       },
       {
         name: "活动中心",

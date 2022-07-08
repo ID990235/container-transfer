@@ -1,6 +1,9 @@
+<!-- 顶部提示(除了待填写状态都要显示 背景颜色在不同状态显示不同颜色) -->
+<ordertip wx:if="{{orderinfo.status != 0}}" status="{{orderinfo.status}}"></ordertip>
 <!-- 订单详情页 -->
 <view class="orderdetail-container">
   <orderaddr bind:orderaddrcpoy="orderaddrcpoy"></orderaddr>
+  <packaginginfo wx:if="{{orderinfo.status == 4}}" bind:handleBigImg="handleBigImg"></packaginginfo>
   <!-- 输入订单 -->
   <view class="order_box">
     <view class="tip">
@@ -19,4 +22,4 @@
   <!-- 订单基本信息 -->
   <orderinfo orderinfo="{{orderinfo}}" bind:copyorder="copyorder"></orderinfo>
 </view>
-<orderbutton orderinfo="{{orderinfo}}" bind:handlePuy="handlePuy"></orderbutton>
+<orderbutton orderinfo="{{orderinfo}}" bind:handlePuy="handlePuy" bind:handleCancel="handleCancel"></orderbutton>

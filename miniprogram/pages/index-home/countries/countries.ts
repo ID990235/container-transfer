@@ -30,16 +30,12 @@ Page({
     empty: false,
     indexList: []
   },
-
-  onLoad() {
-
-  },
   onShow() {
     this.filterList(this.data.countriesList)
   },
   toSearch(e: any) {
     let newList: any[] = []
-    let countriesList = this.data.countriesList
+    let countriesList: any = this.data.countriesList
     for (let key in countriesList) {
       newList.push(...countriesList[key])
     }
@@ -66,7 +62,7 @@ Page({
   },
   filterList(list: any) {
     if (typeof list !== 'object') return
-    const indexList = Object.keys(list)
+    const indexList: any = Object.keys(list)
     this.setData({
       indexList
     })
@@ -80,6 +76,8 @@ Page({
   },
   clickCountries(e: any) {
     const countries: any = e.target.dataset.item
+    console.log(countries);
+
     wx.setStorageSync("countries", countries)
     wx.switchTab({
       url: `/pages/Tabbar/index/index`

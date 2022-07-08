@@ -6,14 +6,13 @@ Page({
     channel: ""
   },
   onLoad(options) {
-    let typestr = options.typestr
-    this.setData({
-      typestr
-    })
+
   },
   onShow() {
+    this.toBackPage()
     this.setData({
-      cardList: wx.getStorageSync('addaddr')
+      cardList: wx.getStorageSync('addaddr'),
+      empty: wx.getStorageSync('addaddr')
     })
   },
   // 跳转添加地址页
@@ -44,29 +43,32 @@ Page({
   handleGetAddr(e: any) {
     const dataTime = e.detail.currentTarget.dataset.carditem.addtime
     const addaddr = wx.getStorageSync('addaddr')
-
+    let back = false // 记录是否已经把数据给上一个页面
     // 判断是否从选择渠道后来的
     let lastPage = getCurrentPages()[getCurrentPages().length - 2]
     if (lastPage.route === 'pages/common/addaddr/addaddr') {
       addaddr.forEach((item: any) => {
         if (item.addtime == dataTime) {
-          const { Name, Phone, Address, City, PostCode } = item
+          const { name, phone, address, city, postcode } = item
           lastPage.setData({
-            Name: Name,
-            Phone: Phone,
-            Address: Address,
-            City: City,
-            PostCode: PostCode,
+            Name: name,
+            Phone: phone,
+            Address: address,
+            City: city,
+            PostCode: postcode,
           })
-          wx.navigateBack()
+          back = true
         }
       })
+    }
+
+    if (back) {
+      wx.navigateBack()
     }
   },
   // 判断上一个页面
   toBackPage() {
     let lastPage = getCurrentPages()[getCurrentPages().length - 2]
-
     if (lastPage.route === 'pages/common/addaddr/addaddr') {
       this.setData({
         channel: lastPage.data.channel

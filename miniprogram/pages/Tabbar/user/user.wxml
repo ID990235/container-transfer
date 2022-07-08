@@ -39,9 +39,9 @@
       </view>
     </view>
     <view class="other">
-      <view wx:for="{{otherItem}}" wx:key="index" data-path="{{item.path}}" class="other-item" bindtap="topage"><text>{{item.name}}</text>
-        <view class="arrow-img">
-          <image src="../../../assets/images/arrowright2.png"></image>
+      <view wx:for="{{otherItem}}" wx:key="index" data-path="{{item.path}}" class="other-item" bindtap="topage"><text data-path="{{item.path}}">{{item.name}}</text>
+        <view data-path="{{item.path}}" class="arrow-img">
+          <image data-path="{{item.path}}" src="../../../assets/images/arrowright2.png"></image>
         </view>
       </view>
     </view>
