@@ -11,6 +11,14 @@ App<IAppOption>({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        let { nickName } = wx.getStorageSync("userinfo")
+        if (!nickName) {
+          wx.navigateTo({
+            url: "/pages/login/login"
+          })
+          wx.hideLoading()
+          return
+        }
       },
     })
   },

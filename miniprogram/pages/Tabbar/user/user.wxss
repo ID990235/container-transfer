@@ -124,3 +124,19 @@
   width: 100%;
   height: 100%;
 }
+
+.right-arrow {
+  position: relative;
+  margin-bottom: 15rpx;
+}
+
+.right-arrow:before {
+  content: '';
+  position: absolute;
+  height: 10rpx;
+  width: 10rpx;
+  border-width: 0 4rpx 4rpx 0;
+  border-style: solid;
+  color: #999999;
+  transform: rotate(-45deg);
+}

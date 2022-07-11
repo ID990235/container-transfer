@@ -1,15 +1,25 @@
 // pages/transferflow/transferflow.ts
+const {
+  fetchProcessText
+} = require("../../../api/user")
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    pagetext: {}
   },
+  onLoad() {
+    this.getProcessText()
+  },
+  // 返回上一页
   touser() {
-    wx.switchTab({
-      url: "/pages/Tabbar/user/user"
+    wx.navigateBack()
+  },
+  // 获取页面文字-转运流程
+  async getProcessText() {
+    const [result, err] = await fetchProcessText()
+    
+    this.setData({
+      pagetext: result.data
     })
   }
 })

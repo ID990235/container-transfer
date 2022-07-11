@@ -1,4 +1,5 @@
 // Components/order-button/order-button.ts
+let _this5: any
 Component({
   options: {
     multipleSlots: true
@@ -10,13 +11,17 @@ Component({
   data: {
 
   },
-
+  lifetimes: {
+    attached: function () {
+      _this5 = this
+    }
+  },
   methods: {
     handlePuy() {
-      this.triggerEvent("handlePuy")
+      _this5.triggerEvent("handlePuy")
     },
-    handleCancel() { 
-      this.triggerEvent("handleCancel")
+    handleCancel() {
+      _this5.triggerEvent("handleCancel")
     }
   }
 })

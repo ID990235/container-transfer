@@ -59,6 +59,16 @@
   z-index: 100;
 }
 
+.weight {
+  position: absolute;
+  font-size: 40rpx;
+  z-index: 100;
+  color: #E7691D;
+  background-color: #FDE5D2;
+  font-size: 20rpx;
+  border: 2prx solid #FDE5D2;
+}
+
 .disabled {
   z-index: -1
 }
@@ -74,4 +84,17 @@
   background-color: rgba(78, 20, 140, 0.6);
   font-size: 20rpx;
   border: 2prx solid rgba(255, 255, 255, 79);
+}
+
+.orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70rpx;
+  height: 32rpx;
+  border-radius: 8rpx;
+  color: #E7691D;
+  background-color: #FDE5D2;
+  font-size: 20rpx;
+  border: 2prx solid #FDE5D2;
 }

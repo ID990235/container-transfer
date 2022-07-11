@@ -58,7 +58,6 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 120rpx;
 }
 
@@ -236,7 +235,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 80rpx;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: 446rpx;
@@ -249,7 +248,7 @@
 }
 
 .agreement-text {
-  height: 84%;
+  height: 60vh;
   overflow: hidden;
   overflow-y: scroll;
   font-size: 28rpx;
@@ -274,12 +273,13 @@
   font-size: 20px;
   text-align: center;
   font-family: Arial;
+  color: #000000;
 }
 
 .card-box {
   padding: 0 40rpx;
   box-sizing: border-box;
-  height: 520rpx;
+  height: 37vh;
   overflow: hidden;
   overflow-y: scroll;
 }

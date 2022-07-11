@@ -1,4 +1,5 @@
 // Components/order-info/order-info.ts
+let _this7: any;
 Component({
   options: {
     multipleSlots: true
@@ -9,9 +10,14 @@ Component({
   data: {
 
   },
+  lifetimes: {
+    attached: function () {
+      _this7 = this
+    }
+  },
   methods: {
     copyorder() {
-      this.triggerEvent("copyorder", this.data.orderinfo.orderNum)
+      _this7.triggerEvent("copyorder")
     }
   }
 })

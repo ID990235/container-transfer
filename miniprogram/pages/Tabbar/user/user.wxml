@@ -3,11 +3,11 @@
   <view class="header">
     <view class="userinfo">
       <view class="portrait">
-        <image src="../../../assets/images/portrait.jpg"></image>
+        <image src="{{userinfo.avatar}}"></image>
       </view>
       <view class="textinfo">
-        <view><text class="name">HH</text></view>
-        <view class="coding">编码：HBK</view>
+        <view><text class="name">{{userinfo.nickName}}</text></view>
+        <view class="coding">编码：{{userinfo.memberNo}}</view>
       </view>
     </view>
   </view>
@@ -16,7 +16,7 @@
     <view class="myorder">
       <view class="order-top">
         <text>我的订单</text>
-        <view class="allorder">全部订单<image src="../../../assets/images/arrowright2.png"></image>
+        <view class="allorder" bindtap="toOrder">全部订单<view class="right-arrow"></view>
         </view>
       </view>
       <view class="order-bottom">

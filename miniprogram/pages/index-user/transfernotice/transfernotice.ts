@@ -1,15 +1,17 @@
 // pages/notice/notice.ts
+const {
+  fetchNoticeText
+} = require("../../../api/user")
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     channel: "",
     disabled: true,
-    buttontext: 5,
+    buttontext: '5',
+    pagetext: {}
   },
-  onLoad(options) {
+  onLoad(options: any) {
+    this.getNoticeText()
     this.toBackPage()
     this.delay()
     const typestr = options.typestr
@@ -18,9 +20,8 @@ Page({
       typestr
     })
   },
+  // 返回上一页
   touser() {
-    // let lastPage = getCurrentPages()[getCurrentPages().length - 2]
-    // console.log(lastPage);
     wx.navigateBack()
   },
   // 跳转订单详情页
@@ -34,12 +35,12 @@ Page({
     let time: any = null
     time = setTimeout(() => {
       if (time) clearTimeout(time)
-      let times: Number = this.data.buttontext
+      let times: any = Number(this.data.buttontext)
       times--
-      this.setData({
-        buttontext: times
-      })
       if (times != 0) {
+        this.setData({
+          buttontext: times
+        })
         this.delay()
       } else {
         this.setData({
@@ -57,5 +58,13 @@ Page({
         channel: lastPage.data.channel
       })
     }
+  },
+  // 获取页面文字-转运须知
+  async getNoticeText() {
+    const [result, err] = await fetchNoticeText()
+
+    this.setData({
+      pagetext: result.data
+    })
   }
 })

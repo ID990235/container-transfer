@@ -34,18 +34,26 @@ Page({
         name: "关于我们",
         path: "aboutus"
       },
-    ]
+    ],
+    userinfo: {}
   },
   onLoad() {
 
   },
   onShow() {
-
+    this.setData({
+      userinfo: wx.getStorageSync("userinfo")
+    })
   },
   topage(e: any) {
     const path = e.target.dataset.path
     wx.navigateTo({
       url: `/pages/index-user/${path}/${path}`
+    })
+  },
+  toOrder() {
+    wx.switchTab({
+      url: "/pages/Tabbar/order/order"
     })
   }
 })

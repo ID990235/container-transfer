@@ -9,27 +9,27 @@
           <view class="phone">{{tools.sub(carditem.phone, 3, 4)}}</view>
         </view>
         <view class="addrinfo">
-          {{carditem.address}}
+          {{carditem.country+','+carditem.city+','+carditem.area}}
         </view>
       </view>
     </view>
     <view class="card-handle">
       <view class="radio-bt">
-        <van-radio-group wx:if="{{carditem.checked}}" value="{{ true }}">
-          <van-radio checked-color="#ed8f56" name="{{carditem.checked}}">
+        <van-radio-group wx:if="{{carditem.status}}" value="{{ 1 }}">
+          <van-radio checked-color="#ed8f56" name="{{carditem.status}}">
             <text class="moren">默认地址</text>
           </van-radio>
         </van-radio-group>
 
-        <van-radio-group wx:else value="{{ true }}" data-time="{{carditem.addtime}}" bind:change="onChange">
-          <van-radio checked-color="#ed8f56" name="{{carditem.checked}}">
+        <van-radio-group wx:else value="{{ 1 }}" data-id="{{carditem.id}}" bind:change="onChange">
+          <van-radio checked-color="#ed8f56" name="{{carditem.status}}">
             <text class="nomoren">设为默认地址</text>
           </van-radio>
         </van-radio-group>
       </view>
       <view>
-        <van-icon name="edit" size="44rpx" />
-        <van-icon class="delete" name="delete-o" size="44rpx" />
+        <van-icon name="edit" size="44rpx" bindtap="handleEditAddr" data-carditem="{{carditem}}" />
+        <van-icon class="delete" name="delete-o" size="44rpx" data-id="{{carditem.id}}" bindtap="handleDeleteAddr" />
       </view>
     </view>
   </view>

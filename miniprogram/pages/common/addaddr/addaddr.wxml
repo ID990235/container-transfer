@@ -33,6 +33,7 @@
   <!-- 按钮跳转 -->
   <view class="bt-box">
     <button wx:if="{{channel != ''}}" class="bt-item" bindtap="totransfer">立即转运</button>
+    <button wx:elif="{{editAddr != ''}}" class="bt-item" bindtap="handleEditAddr">编辑地址</button>
     <button wx:else class="bt-item" bindtap="addaddr">添加地址</button>
   </view>
 </view>

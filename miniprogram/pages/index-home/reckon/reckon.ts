@@ -20,6 +20,8 @@ Page({
   // 选择渠道
   channel() {
     let _this = this
+    let newfirst: any;
+    let newcontinue: any;
     wx.showActionSheet({
       itemList: ['普通货物', '电子产品', '液体粉末', '内地EMS', '广东EMS'],
       itemColor: "#73c97c",
@@ -35,6 +37,25 @@ Page({
         _this.setData({
           channel: obj[res.tapIndex]
         })
+
+        let channel: string = _this.data.channel
+        _this.data.channelList.forEach(item => {
+          if (item.name == channel) {
+            newfirst = item.first
+            newcontinue = item.continue
+          }
+        })
+        let value: any = Number(_this.data.weight)
+        if (value) {
+          let result = newfirst + (value - 1) * newcontinue
+          _this.setData({
+            money: result
+          })
+        } else {
+          _this.setData({
+            money: '0.00'
+          })
+        }
       },
       fail(res) {
         console.log(res);
@@ -57,6 +78,10 @@ Page({
       this.setData({
         money: result
       })
+    } else {
+      this.setData({
+        money: '0.00'
+      })
     }
-  }
+  },
 })

@@ -1,11 +1,11 @@
 <!-- 我的地址页面 -->
 <view class="myaddr-container">
-  <addrcard wx:for="{{cardList}}" carditem="{{item}}" bind:handlegetaddr="handleGetAddr" bind:addrradio="clickRadio" wx:key="index"></addrcard>
+  <addrcard wx:for="{{cardList}}" style="order: {{item.status ? 0 : 1}};" carditem="{{item}}" bind:handlegetaddr="handleGetAddr" bind:handleSelectAddr="handleSelectAddr" bind:handleDeleteAddr="handleDeleteAddr" bind:handleEditAddr="handleEditAddr" wx:key="index"></addrcard>
 
-  <van-empty wx:if="{{!empty}}" description="亲，你还没有添加地址信息喔~">
+  <van-empty wx:if="{{cardList.length == 0}}" description="亲，你还没有添加地址信息喔~">
     <button class="bt" bindtap="addaddr">添加地址</button>
   </van-empty>
-  <view wx:elif="{{!channel}}" class="bottom-box">
+  <view wx:if="{{!channel && cardList.length > 0}}" class="bottom-box">
     <button class="bt-2" bindtap="addaddr">添加地址</button>
   </view>
 </view>

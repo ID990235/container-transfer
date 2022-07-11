@@ -1,4 +1,7 @@
 // index.ts
+const {
+  fetchBanner, fetchGoodsChannel
+} = require("../../../api/index")
 Page({
   data: {
     liseview: [
@@ -20,17 +23,29 @@ Page({
       }],
     show: false,
     countries: '',
-    channel: ""
+    channel: "",
+    bannerList: []
   },
   onLoad(options: any) {
-
   },
   onShow() {
+    this.getBannerData()
+    this.getGoodsChannel()
     const countries = wx.getStorageSync('countries')
     if (!countries) return
     this.setData({
       countries: countries
     })
+  },
+  // 获取轮播图数据
+  async getBannerData() {
+    const [result, err] = await fetchBanner()
+    if (!err) {
+      this.setData({
+        bannerList: result.data
+      })
+    }
+
   },
   // 跳转到选择国家页
   selectCountries() {
@@ -51,14 +66,14 @@ Page({
       itemList: ['普通货物', '电子产品', '液体粉末', '内地EMS', '广东EMS'],
       itemColor: "#73c97c",
       success(res) {
-        let obj: Object = {
+        let obj: any = {
           0: "普通货物",
           1: "电子产品",
           2: "液体粉末",
           3: "内地EMS",
           4: "广东EMS",
         }
-        
+
         _this.setData({
           channel: obj[res.tapIndex]
         })
@@ -77,7 +92,7 @@ Page({
   // 联系客服
   contact() {
     wx.navigateTo({
-      url: "/pages/contactservice/contactservice"
+      url: "/pages/index-user/contactservice/contactservice"
     })
   },
   // 首页转运须知和运费估算跳转
@@ -92,5 +107,11 @@ Page({
         url: "/pages/index-home/reckon/reckon"
       })
     }
+  },
+  // 获取货物渠道等信息
+  async getGoodsChannel() {
+    const [result, err] = await fetchGoodsChannel()
+    // console.log(result.data);
+    
   }
 })

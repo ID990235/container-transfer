@@ -1,5 +1,5 @@
 // Components/order-card/order-card.ts
-let that: any
+let _this6: any
 Component({
   options: {
     multipleSlots: true
@@ -12,12 +12,12 @@ Component({
   },
   lifetimes: {
     attached: function () {
-      that = this
+      _this6 = this
     }
   },
   methods: {
     handleDetails() {
-      this.triggerEvent("handleDetails")
+      _this6.triggerEvent("handleDetails")
     }
   }
 })

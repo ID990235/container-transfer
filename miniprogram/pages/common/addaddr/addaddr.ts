@@ -1,4 +1,7 @@
 // pages/addaddr/addaddr.ts
+const {
+  fetchAddAddr, getAddr, updateAddr
+} = require("../../../api/addr")
 Page({
 
   /**
@@ -24,14 +27,14 @@ Page({
       {
         title: "Phone:",
         label: "phone",
-        reg: "[0-9]{4,18}",
-        prompt: "请确认是否为数字号码，且必须是4到18位数喔~",
+        reg: "(13|14|15|17|18|19)[0-9]{9}",
+        prompt: "请确认好手机格式，且必须是11位数喔~",
         placeholder: "Please fill in the recipient‘s phone",
         value: ""
       },
       {
         title: "Address:",
-        label: "address",
+        label: "area",
         reg: "[A-Za-z0-9]+",
         prompt: "地址必须是英文或数字喔~",
         placeholder: "Please fill in the address",
@@ -47,14 +50,35 @@ Page({
       },
       {
         title: "Postcode:",
-        label: "postcode",
-        reg: "[0-9]{4,10}",
-        prompt: "邮政编码必须是数字，且必须是4到10位数~",
+        label: "code",
+        reg: "[0-9]{6}",
+        prompt: "邮政编码必须是数字，且必须是6位数~",
         placeholder: "lease fill in the postcode",
         value: ""
       },
+      {
+        title: "Country:",
+        label: "country",
+        reg: "[A-Za-z]+",
+        prompt: "选择国家必须是英文喔~",
+        placeholder: "lease fill in the country",
+        value: ""
+      }
     ],
     channel: "",
+    editAddr: '',
+    memberId: "",
+    id: ""
+  },
+  onLoad(options: any) {
+    if ('id' in options) {
+      this.getAddr(options)
+      this.setData({
+        editAddr: options,
+        memberId: options.memberId,
+        id: options.id
+      })
+    }
   },
   onShow() {
     this.echoaddr()
@@ -77,53 +101,44 @@ Page({
       }
     })
   },
-  onChange({ detail }) {
-    this.setData({ checked: detail });
+  onChange(e: any) {
+    this.setData({ checked: e.detail });
   },
   // 添加地址正则判断
   bindinput(e: any) {
     const labelName = e.detail.target.dataset.name
     const labelvalue = e.detail.detail.value
-    this.data.inputData.forEach((item: any) => {
-      if (labelName == item.label) {
-        const reg = new RegExp(`^${item.reg}$`, 'g');
-        if (reg.test(labelvalue) != true) {
-          wx.showToast({
-            title: item.prompt,
-            icon: "none"
-          })
+    // input框不等于空才提醒客户
+    if (labelvalue != '') {
+      this.data.inputData.forEach((item: any) => {
+        if (labelName == item.label) {
+          const reg = new RegExp(`^${item.reg}$`, 'g');
+          if (reg.test(labelvalue) != true) {
+            wx.showToast({
+              title: item.prompt,
+              icon: "none"
+            })
+          }
         }
-      }
-    })
+      })
+    }
   },
   // 添加地址
-  addaddr() {
-    let obj = {}
+  async addaddr() {
+    let { id: memberId } = wx.getStorageSync("userinfo")
+    let obj: any = { type: 1, status: 0, memberId }
     for (let key in this.data.inputData) {
       obj[this.data.inputData[key].label] = this.data.inputData[key].value
     }
 
-    let addtime = new Date().getTime()
-    let { name: Name, phone: Phone, address: Address, city: City, postcode: PostCode } = obj
+    let { name, phone, area, city, code, country } = obj
 
-    if (Name && Phone && Address && City && PostCode) {
-      let getaddaddr = wx.getStorageSync('addaddr')
-      // 有设置默认地址 判断之前是否已有默认地址
+    if (name && phone && area && city && code && country) {
+      // 有设置默认地址
       if (this.data.checked) {
-        obj.checked = true
-        obj.addtime = addtime
-        getaddaddr = this.defaultAddr(getaddaddr)
+        obj.status = 1
       }
-
-      // 拼接之前所添加的地址
-      let newarr: any = []
-      if (getaddaddr) {
-        newarr = [...getaddaddr, obj]
-      } else {
-        newarr.push(obj)
-      }
-
-      JSON.stringify(wx.setStorageSync('addaddr', newarr))
+      const [result, err] = await fetchAddAddr(obj)
       wx.navigateBack()
     } else {
       wx.showToast({
@@ -148,37 +163,39 @@ Page({
       inputData: arr
     })
   },
-  // 选择地址
+  // 选择地址-跳转到地址页选择
   selectAddr() {
     wx.navigateTo({
       url: `/pages/index-user/myaddr/myaddr`
     })
   },
-  // 地址回显
+  // 点击地址-地址回显
   echoaddr() {
-    const { Address, City, Country, Name, Phone, PostCode } = this.data
+    const { Address, City, Name, Phone, PostCode, Country } = this.data
+    console.log(Address);
+    
     this.setData({
       [`inputData[0].value`]: Name,
       [`inputData[1].value`]: Phone,
       [`inputData[2].value`]: Address,
       [`inputData[3].value`]: City,
       [`inputData[4].value`]: PostCode,
-    })
-  },
-  // 是否有默认地址
-  defaultAddr(oldData: []) {
-    if (!Array.isArray(oldData)) return
-    return oldData.map((item: any) => {
-      if (item.checked) {
-        item.checked = false
-      }
-      return item
+      [`inputData[5].value`]: Country,
     })
   },
   // 跳转转运须知页面
   totransfer() {
-    const { Address, City, Country, Name, Phone, PostCode } = this.data
+    const { Address, City, Name, Phone, PostCode } = this.data
+
+    let obj: any = {
+      address: Address,
+      city: City,
+      name: Name,
+      phone: Phone,
+      postcode: PostCode
+    }
     if (Address && City && Name && Phone && PostCode) {
+      wx.setStorageSync("Select", obj)
       wx.navigateTo({
         url: `/pages/index-user/transfernotice/transfernotice`
       })
@@ -198,5 +215,42 @@ Page({
         channel: lastPage.data.channel
       })
     }
+  },
+  // 编辑地址-获取相应地址数据回显
+  async getAddr(options: Object) {
+    const [result, err] = await getAddr(options)
+
+    this.setData({
+      [`inputData[0].value`]: result.data.name,
+      [`inputData[1].value`]: result.data.phone,
+      [`inputData[2].value`]: result.data.area,
+      [`inputData[3].value`]: result.data.city,
+      [`inputData[4].value`]: result.data.code,
+      [`inputData[5].value`]: result.data.country,
+      checked: result.data.status ? true : false
+    })
+  },
+  // 编辑地址-提交
+  async handleEditAddr() {
+    let obj: any = { status: 0, type: 1, id: this.data.id, memberId: this.data.memberId }
+    this.data.inputData.forEach((item: any, index: any) => {
+      obj[this.data.inputData[index].label] = item.value
+    })
+    let { name, phone, area, city, code, country } = obj
+
+    if (name && phone && area && city && code && country) {
+      // 有设置默认地址
+      if (this.data.checked) {
+        obj.status = 1
+      }
+      const [result, err] = await updateAddr(obj)
+      wx.navigateBack()
+    } else {
+      wx.showToast({
+        title: "请先输入完整地址后再提交喔~",
+        icon: "none"
+      })
+    }
+
   }
 })

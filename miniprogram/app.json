@@ -19,7 +19,8 @@
     "pages/index-order/order-valuation/order-valuation",
     "pages/index-order/puy-succeed/puy-succeed",
     "pages/index-user/my-coupons/my-coupons",
-    "pages/index-order/puy-details/puy-details"
+    "pages/index-order/puy-details/puy-details",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

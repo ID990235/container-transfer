@@ -33,12 +33,12 @@ page {
 .bottombgc {
   background-image: linear-gradient(0deg, #73c97c, #73c97c 50%);
   position: absolute;
-  top: 400rpx;
-  left: -25%;
+  top: 455rpx;
+  left: 0%;
   height: 270rpx;
-  width: 150%;
-  border-bottom-left-radius: 100%;
-  border-bottom-right-radius: 100%;
+  width: 100%;
+  border-bottom-left-radius: 200%;
+  border-bottom-right-radius: 200%;
   z-index: -1;
 }
 

@@ -13,7 +13,7 @@
         <view class="r-bottom">
           <view class="expire">2018.04.01到期</view>
           <view class="only">(仅剩一天)</view>
-          <button class="bt">立即领取</button>
+          <button class="bt" bindtap="receive">立即领取</button>
         </view>
       </view>
     </view>

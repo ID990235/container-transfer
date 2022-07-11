@@ -19,10 +19,13 @@ Page({
     value: "",
     inputList: [],
     disabled: false,
-    img: "/images/test.png"
+    img: "/images/test.png",
+    selectAddr: {}
   },
   onLoad() {
-
+    this.setData({
+      selectAddr: wx.getStorageSync("Select")
+    })
   },
   onShow() {
 
@@ -165,6 +168,6 @@ Page({
   },
   // 放大图片
   handleBigImg() {
-   
+
   }
 })

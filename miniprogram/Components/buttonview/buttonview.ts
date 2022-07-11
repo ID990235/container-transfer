@@ -1,8 +1,7 @@
 // Component/buttonview/buttonview.ts
+let _this3: any
 Component({
-  /**
-   * 组件的属性列表
-   */
+
   options: {
     multipleSlots: true
   },
@@ -15,9 +14,14 @@ Component({
   data: {
 
   },
+  lifetimes: {
+    attached: function () {
+      _this3 = this
+    }
+  },
   methods: {
     handleJump(e: any) {
-      this.triggerEvent("handleJump", e)
+      _this3.triggerEvent("handleJump", e)
     }
   }
 })

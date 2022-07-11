@@ -6,10 +6,10 @@
       </view>
       <view class="right">
         <view class="top">
-          <view class="name">HM Zheng</view>
-          <view class="phone">13388888888</view>
+          <view class="name">{{addrinfo.name}}</view>
+          <view class="phone">{{addrinfo.phone}}</view>
         </view>
-        <view class="bottom">MEGASYSTEMS INC 799 E DRAGRAM SUITE 5ATUCSON, AZ 85705 USA</view>
+        <view class="bottom">{{addrinfo.addr}}</view>
       </view>
     </view>
   </view>
@@ -29,7 +29,7 @@
         </view><text>优惠券</text>
       </view>
       <view class="coupons-r" bindtap="handleSelectCoupons">
-        <text class="red">- ¥ <text>{{}}</text></text>
+        <text class="red">- ¥ <text>{{sum}}</text></text>
         <view class="right-arrow"></view>
       </view>
     </view>
@@ -86,21 +86,21 @@
   <view class="Select-coupons_box">
     <view class="title">选择优惠券</view>
     <view class="card-box">
-      <view wx:for="{{ouponsList}}" wx:key="index" class="card-item">
-        <view class="left">
-          <view class="theme">{{item.theme}}</view>
-          <view class="content">{{item.content}}</view>
+      <view wx:for="{{ouponsList}}" wx:key="index" data-index="{{index}}" bindtap="handleClickCoupons" class="card-item">
+        <view class="left" data-index="{{index}}">
+          <view class="theme" data-index="{{index}}">{{item.theme}}</view>
+          <view class="content" data-index="{{index}}">{{item.content}}</view>
         </view>
-        <view class="right">
-          <view class="discounts-sum">— ¥ {{item.sum}}</view>
-          <van-radio-group value="{{ radio }}" bind:change="onChange">
-            <van-radio name="{{index}}"></van-radio>
+        <view class="right" data-index="{{index}}">
+          <view class="discounts-sum" data-index="{{index}}">— ¥ {{item.sum}}</view>
+          <van-radio-group value="{{ radio }}" data-index="{{index}}">
+            <van-radio name="{{index}}" data-index="{{index}}"></van-radio>
           </van-radio-group>
         </view>
       </view>
     </view>
     <view class="receive-box">
-      <button>确认使用</button>
+      <button bindtap="handleConfirm">确认使用</button>
     </view>
   </view>
 </van-popup>

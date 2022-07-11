@@ -18,10 +18,10 @@
     </view>
     <view class="right">
       <view class="top">
-        <view class="name">集装箱仓库</view>
-        <view class="phone">13388888888</view>
+        <view class="name">{{selectAddr.name}}</view>
+        <view class="phone">{{selectAddr.phone}}</view>
       </view>
-      <view class="bottom">深圳市龙华区龙华街道工业路壹城环智中心C座2607室</view>
+      <view class="bottom">{{selectAddr.city+ ',' +selectAddr.address}}</view>
     </view>
   </view>
 </view>
